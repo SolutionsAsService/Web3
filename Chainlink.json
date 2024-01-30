@@ -1,0 +1,67 @@
+{
+  "Chainlink": {
+    "Description": "Decentralized blockchain oracle network built on Ethereum, facilitating transfer of tamper-proof data from off-chain to on-chain smart contracts.",
+    "Denominations": {
+      "Plural": "Chainlink",
+      "Code": "LINK"
+    },
+    "Development": {
+      "OriginalAuthors": ["Sergey Nazarov", "Steve Ellis", "Dr. Ari Juels"],
+      "WhitePaper": "chain.link/whitepaper",
+      "CodeRepository": "github.com/smartcontractkit/chainlink",
+      "ProgrammingLanguages": ["Solidity", "Go"],
+      "OperatingSystem": "Blockchain-agnostic",
+      "SourceModel": "Open source",
+      "License": "MIT License"
+    },
+    "Ledger": {
+      "SupplyLimit": 1000000000
+    },
+    "Website": "chainlinklabs.com",
+    "History": {
+      "CreationYear": 2017,
+      "LaunchYear": 2019,
+      "KeyIntegrations": {
+        "2018": "Town Crier",
+        "2020": "DECO"
+      },
+      "TrademarkRegistration": {
+        "Date": "2019-03-12",
+        "Entity": "Smartcontract Chainlink Sezc, Ltd."
+      },
+      "SecondWhitePaper": {
+        "Title": "Chainlink 2.0: Next Steps in the Evolution of Decentralized Oracle Networks",
+        "PublicationYear": 2021
+      }
+    },
+    "Technology": {
+      "OracleNetworkType": "Decentralized",
+      "KeyFunctions": ["External Data Transfer", "Off-chain Computation"],
+      "Features": {
+        "VRF": "Verifiable Random Function",
+        "DataFeeds": "Used for bringing election data on-chain"
+      }
+    },
+    "LinkToken": {
+      "CompensationFor": "Node Operators",
+      "TokenType": "ERC677 (extension of ERC-20)",
+      "PreminedStatus": true,
+      "ICOControversies": true,
+      "Functionality": {
+        "DataPayloads": "Feed data from off-chain to smart contracts",
+        "PaymentForServices": "Pay node operators for data retrieval"
+      },
+      "Storage": "ERC-20 compatible wallets"
+    }
+  },
+  "References": [
+    {
+      "Title": "ChainLink A Decentralized Oracle Network",
+      "Authors": ["Ellis, Steven", "Juels, Ari", "Nazarov, Sergey"],
+      "Date": "4 September 2017",
+      "URL": "chain.link",
+      "RetrievalDate": "8 October 2022"
+    },
+    // Additional references continue here
+  ]
+}
