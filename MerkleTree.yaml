@@ -1,0 +1,32 @@
+MerkleTree:
+  Description: "A cryptographic and computer science construct, a Merkle tree (or hash tree) is a structure in which each leaf node is labeled with the hash of a data block, and each non-leaf node is labeled with the cryptographic hash of its child nodes' labels. This structure enables efficient and secure verification of content in large data sets."
+  Structure:
+    LeafNodes: "Nodes at the base of the tree, each containing a hash of data blocks."
+    NonLeafNodes: "Nodes above the leaf level, each containing a hash derived from its children nodes."
+    RootNode: "The single node at the top of the tree, containing a hash formed from its children, representing the entire data set's integrity."
+    BinaryTree: "Most implementations are binary, but can be adapted to more child nodes per parent."
+  HashFunction: 
+    Description: "A cryptographic hash function (e.g., SHA-2) is typically used for hashing, ensuring security against tampering."
+    Alternative: "For protection against unintentional damage, simpler checksums (e.g., CRC) may be used."
+  Uses:
+    DataVerification: "Ensures data blocks received in peer-to-peer networks are intact and unaltered."
+    Cryptography: "Foundational in hash-based cryptography for secure data handling."
+    SystemsAndProtocols:
+      - "InterPlanetary File System (IPFS)"
+      - "File systems like Btrfs and ZFS"
+      - "Dat and Apache Wave protocols"
+      - "Distributed systems like Git, Mercurial, and Tahoe-LAFS"
+      - "Blockchain networks such as Bitcoin and Ethereum"
+      - "Certificate Transparency framework"
+      - "Package managers (Nix, GNU Guix)"
+      - "NoSQL systems (Apache Cassandra, Riak, Dynamo)"
+  Efficiency:
+    Verification: "Verifying a leaf node's integrity requires a logarithmic number of hashes, significantly more efficient than linear methods."
+  Security:
+    SecondPreimageAttack:
+      Description: "A vulnerability where an attacker can create a different document with the same root hash. Mitigated by prefixing hash data with specific bytes for leaf and internal nodes."
+    Fixes: "Certificate Transparency suggests prepending a 0x00 byte for leaf hashes and a 0x01 byte for internal hashes. Limiting tree size and depth can also enhance security."
+  Implementation:
+    TigerTreeHash:
+      Description: "A specific form of Merkle tree that uses the Tiger hash function, binary structure, and is prevalent in various file-sharing protocols."
+      Applications: "Gnutella, Gnutella2, Direct Connect, and associated file-sharing applications like Phex, BearShare, LimeWire, Shareaza, DC++, and gtk-gnutella."
