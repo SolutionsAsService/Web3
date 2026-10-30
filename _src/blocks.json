@@ -1,0 +1,21 @@
+{
+  "name": "Five Blocks",
+  "tagline": "Web3 from first principles",
+  "blocks": [
+    { "slug": "merkle-trees", "title": "Hashes and Merkle trees", "short": "Merkle trees",
+      "files": ["MerkleTree.yaml"], "committed": "2024-02-26",
+      "summary": "How one short fingerprint can vouch for gigabytes of data, and prove any piece of it with a handful of hashes." },
+    { "slug": "state-machine-replication", "title": "State machine replication", "short": "Replication",
+      "files": ["StateMachineReplication.json"], "committed": "2024-05-02",
+      "summary": "Run the same deterministic program on several servers, feed them the same inputs in the same order, and they stay in step." },
+    { "slug": "byzantine-faults", "title": "Byzantine faults and agreement", "short": "Byzantine faults",
+      "files": ["ByzantineFault.json", "ByzantineFault.yaml"], "committed": "2024-02-16",
+      "summary": "What happens when some machines don't just crash, but lie, and why you need more than three honest nodes for every traitor." },
+    { "slug": "ethereum", "title": "Ethereum", "short": "Ethereum",
+      "files": ["Ethereum.json"], "committed": "2024-01-30",
+      "summary": "A replicated state machine that anyone can program: accounts, the EVM, gas, tokens, and the move to proof of stake." },
+    { "slug": "chainlink", "title": "Chainlink and oracles", "short": "Oracles",
+      "files": ["Chainlink.json"], "committed": "2024-01-30",
+      "summary": "A blockchain can't see the outside world. Oracle networks bring data in, using the same fault-tolerance ideas as the chain itself." }
+  ]
+}

@@ -1,0 +1,58 @@
+title: State machine replication · Five Blocks
+description: How state machine replication makes a service fault tolerant: deterministic state machines, agreeing on the order of inputs, how many replicas you need, and how it leads to blockchains.
+---
+<h2 id="idea">The idea</h2>
+<p>A single server is a single point of failure. <strong>State machine replication</strong> runs copies of the same service, called replicas, on several machines that fail independently. Clients get correct answers as long as enough of the replicas are healthy.</p>
+<p>The trick that makes this work was set out by Leslie Lamport in 1978, and made into a general method in Fred Schneider's 1990 tutorial. Treat the service as a <strong>deterministic state machine</strong>:</p>
+<dl class="parts">
+  <div><dt>State</dt><dd>Everything the service remembers, such as account balances.</dd></div>
+  <div><dt>Input</dt><dd>A request that may change the state, such as "move 5 from Alice to Bob".</dd></div>
+  <div><dt>Transition</dt><dd>A function from (state, input) to the next state and an output. Deterministic means the same state and input always give the same result: no clocks, no randomness, no "whichever thread finishes first".</dd></div>
+</dl>
+<p>Then the rule is simple. If every replica starts in the same state and applies the <em>same inputs in the same order</em>, every healthy replica will be in the same state and give the same outputs.</p>
+
+<h2 id="log">The log is everything</h2>
+<figure class="fig"><div class="fig-scroll" tabindex="0" role="group" aria-label="Diagram, scrolls sideways on small screens">
+<svg viewBox="0 0 640 250" role="img" aria-labelledby="fig-log-t">
+  <title id="fig-log-t">Three replicas, each holding the same ordered log of four inputs: deposit, transfer, withdraw, transfer. Each applies the log to the same start state and reaches the same final state, shown as a matching hash.</title>
+  <g class="d-txt"><text x="20" y="34">Ordered log</text></g>
+  <g class="d-log">
+    <rect x="130" y="16" width="110" height="28"/><rect x="246" y="16" width="110" height="28"/><rect x="362" y="16" width="110" height="28"/><rect x="478" y="16" width="110" height="28"/>
+  </g>
+  <g class="d-mono"><text x="185" y="35" text-anchor="middle">1 deposit</text><text x="301" y="35" text-anchor="middle">2 transfer</text><text x="417" y="35" text-anchor="middle">3 withdraw</text><text x="533" y="35" text-anchor="middle">4 transfer</text></g>
+  <g class="d-arrow"><path d="M359 50 V82"/><path d="M359 50 L170 104"/><path d="M359 50 L548 104"/></g>
+  <g class="d-rep">
+    <rect x="80" y="106" width="180" height="110"/><rect x="270" y="106" width="180" height="110"/><rect x="460" y="106" width="180" height="110" class="lastrep"/>
+  </g>
+  <g class="d-txt"><text x="170" y="132" text-anchor="middle">Replica 1</text><text x="360" y="132" text-anchor="middle">Replica 2</text><text x="550" y="132" text-anchor="middle">Replica 3</text></g>
+  <g class="d-mono"><text x="170" y="164" text-anchor="middle">start → apply 1–4</text><text x="360" y="164" text-anchor="middle">start → apply 1–4</text><text x="550" y="164" text-anchor="middle">start → apply 1–4</text>
+  <text x="170" y="196" text-anchor="middle">state 7f3a…</text><text x="360" y="196" text-anchor="middle">state 7f3a…</text><text x="550" y="196" text-anchor="middle">state 7f3a…</text></g>
+</svg></div>
+<figcaption>Same start, same inputs, same order: same state. The hard part is getting every replica to agree on the order.</figcaption>
+</figure>
+<p>So the whole problem becomes agreeing on one ordered list of inputs, a <strong>log</strong>, despite messages being delayed or lost and some machines failing. This is the problem of <strong>consensus</strong>. Paxos (Lamport), Raft (Ongaro and Ousterhout) and PBFT (Castro and Liskov) are all protocols for agreeing on the next entry in the log.</p>
+
+<h2 id="how-many">How many replicas?</h2>
+<p>It depends on how replicas can fail.</p>
+<div class="table-wrap"><table class="tbl">
+  <caption>Replicas needed to tolerate f faulty ones</caption>
+  <thead><tr><th scope="col">Failure model</th><th scope="col">What a faulty replica does</th><th scope="col">Replicas needed</th><th scope="col">Example: f = 1</th></tr></thead>
+  <tbody>
+    <tr><td>Crash</td><td>Stops, and says nothing more</td><td class="mono">2f + 1</td><td class="mono">3</td></tr>
+    <tr><td>Byzantine</td><td>Anything at all: lies, sends different answers to different replicas, colludes</td><td class="mono">3f + 1</td><td class="mono">4</td></tr>
+  </tbody>
+</table></div>
+<p>With crash faults, any two majorities of 2f + 1 replicas overlap in at least one replica, so a decision can't be lost. With Byzantine faults, any two quorums of 2f + 1 out of 3f + 1 overlap in at least f + 1 replicas, so at least one honest replica is in both. Why that is needed is the subject of <a href="byzantine-faults.html">the next block</a>.</p>
+<p>Once the inputs are agreed, a client can simply compare outputs. With 2f + 1 replicas, a value given by f + 1 of them must come from at least one healthy replica.</p>
+
+<h2 id="steps">Putting it together</h2>
+<ol class="steps">
+  <li><strong>Place replicas</strong> on machines that fail independently: different hardware, power and ideally different places.</li>
+  <li><strong>Agree on order.</strong> Run a consensus protocol so every healthy replica appends the same input to its log in the same position.</li>
+  <li><strong>Execute</strong> each logged input, in order, with deterministic code.</li>
+  <li><strong>Answer clients</strong> once enough replicas agree on the output.</li>
+  <li><strong>Watch and repair.</strong> Detect replicas whose state has drifted, replace them, and bring new ones up to date from a snapshot plus the log.</li>
+</ol>
+
+<h2 id="to-blockchains">From replicas to blockchains</h2>
+<p>A blockchain is state machine replication with the doors open. The log is the chain of blocks, the inputs are transactions, and the state machine is, for Ethereum, the EVM. What changes is <em>who</em> runs the replicas: not a company's own servers, but anyone, including people who might cheat. That is why public chains use Byzantine fault-tolerant consensus, and why <a href="ethereum.html">Ethereum</a> pays validators and penalises misbehaviour.</p>

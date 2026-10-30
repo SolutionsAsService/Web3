@@ -1,0 +1,92 @@
+{
+  "Ethereum": {
+    "Description": "Decentralized blockchain with smart contract functionality. Ether (ETH) is its native cryptocurrency, second only to bitcoin in market capitalization.",
+    "Ether": {
+      "Abbreviation": "ETH",
+      "Sign": "Ξ"
+    },
+    "Software": {
+      "OriginalAuthors": ["Vitalik Buterin", "Gavin Wood"],
+      "InitialRelease": "30 July 2015",
+      "StableRelease": {
+        "Version": "1.12.2",
+        "ReleaseDate": "13 August 2023"
+      },
+      "DevelopmentStatus": "Active",
+      "ProgrammingLanguages": ["Go", "Rust", "C#", "C++", "Java", "Python", "Nim", "TypeScript"],
+      "OperatingSystem": "Cross-platform",
+      "Platform": ["x86-64", "ARM"],
+      "AvailableIn": "Multilingual, primarily English",
+      "Type": "Distributed computing",
+      "License": "Open-source licenses",
+      "ActiveHosts": "Approximately 8,600 nodes as of 6 June 2023",
+      "Website": "ethereum.org"
+    },
+    "History": {
+      "ConceptionYear": 2013,
+      "Founders": ["Vitalik Buterin", "Gavin Wood", "Charles Hoskinson", "Anthony Di Iorio", "Joseph Lubin"],
+      "DevelopmentStart": 2014,
+      "NetworkLive": "30 July 2015",
+      "KeyFeatures": ["DeFi Applications", "NFTs", "Use of ERC-20 Token Standard", "Initial Coin Offerings"],
+      "MajorUpgrade": {
+        "Name": "The Merge",
+        "Date": "15 September 2022",
+        "Details": "Transition from Proof-of-Work (PoW) to Proof-of-Stake (PoS)",
+        "EnergyReduction": "99%"
+      }
+    },
+    "Design": {
+      "Ether": {
+        "Description": "Cryptocurrency generated as a reward to validators in proof-of-stake system.",
+        "Unit": "wei (1 ether = 10^18 wei)"
+      },
+      "Accounts": {
+        "Types": ["User Accounts", "Contract Accounts"],
+        "Functions": "Transfer ETH, execute contract code, create new contracts"
+      },
+      "Addresses": "Hexadecimal, prefixed with 0x",
+      "VirtualMachine": "Ethereum Virtual Machine (EVM)",
+      "Gas": "Unit of account within EVM for transaction fee calculation"
+    },
+    "Applications": {
+      "EVMInstructionSet": "Turing-complete",
+      "PopularUses": ["ERC-20 Tokens", "ERC-721 NFTs", "DeFi", "DAOs", "Prediction Markets"],
+      "ContractLanguages": ["Solidity", "Serpent", "Yul", "LLL", "Mutan", "Vyper"]
+    },
+    "ERC-20Tokens": {
+      "Description": "Standard for fungible tokens on Ethereum blockchain",
+      "APIFunctions": ["Token transfer", "Token balance retrieval", "Total supply retrieval"]
+    },
+    "NFTs": {
+      "ERC-721Standard": "Standard for non-fungible tokens",
+      "Uses": ["Digital art", "Collectibles", "Virtual real estate"]
+    },
+    "DeFi": {
+      "Description": "Decentralized financial instruments",
+      "Access": "Web3-enabled browsers or applications",
+      "Examples": ["MakerDAO", "Compound", "Uniswap"]
+    },
+    "EnterpriseSoftware": {
+      "Usage": "Ethereum-based software for enterprise applications",
+      "InterestedParties": ["Microsoft", "IBM", "JPMorgan Chase", "Deloitte"]
+    },
+    "Performance": {
+      "TransactionsPerSecond": "25 as of January 2016",
+      "Comparison": "Visa processes 45,000 payments per second"
+    },
+    "Regulation": {
+      "US": "Proposed Digital Commodities Consumer Protection Act to regulate cryptocurrencies"
+    },
+    "Notes": {
+      "CryptocurrencyCode": "Informal use of 'ETH', no formal ISO 4217 code"
+    },
+    "References": [
+      {
+        "Source": "Ethernodes",
+        "Date": "6 June 2023",
+        "Detail": "Active hosts data"
+      },
+      // Additional references continue here
+    ]
+  }
+}

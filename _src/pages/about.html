@@ -1,0 +1,48 @@
+title: About · Five Blocks
+description: What Five Blocks is, how its hash chain works and how to verify it, the original research notes and what was corrected, and the sources.
+---
+<header class="page-head wrap">
+  <h1>About Five Blocks</h1>
+  <p class="lede">An open, plain-language guide to the computer science underneath Web3. It is written for developers and curious readers, not traders.</p>
+</header>
+<div class="wrap about"><div class="prose">
+<h2 id="what">What it is</h2>
+<p>Five Blocks grew from a small set of research notes on Merkle trees, state machine replication, Byzantine faults, Ethereum and Chainlink. Each note became one page, ordered so that each idea builds on the one before.</p>
+<p>It is educational only. Nothing here is investment, legal or tax advice, and the site doesn't show prices or link to exchanges.</p>
+
+<h2 id="chain">How the chain works</h2>
+<p>Each page is a block. Its payload is the exact bytes of the original note or notes it was written from, served in <code>data/</code>. Its hash is:</p>
+<p class="formula mono">hash = SHA-256( previous hash as 64 hex characters ‖ payload bytes )</p>
+<p>Block #0's previous hash is 64 zeros:</p>
+<p class="mono genesis">{{genesis}}</p>
+<p>The <strong>Verify</strong> button on the home page downloads every payload and recomputes all five hashes in your browser. To check from a terminal in a copy of the repository, run this for block #0, then repeat with each result as the next block's prefix:</p>
+<pre class="code-block"><code>( printf '%064d' 0; cat site/data/MerkleTree.yaml ) | sha256sum</code></pre>
+<p>The build refuses to run if a payload contains Windows line endings, and <code>.gitattributes</code> stops Git converting them, so the bytes and the hashes are the same on every machine.</p>
+
+<h2 id="corrections">What we corrected from the notes</h2>
+<p>The notes are kept unchanged as payloads. Where they were wrong or out of date, the pages say something different:</p>
+<ul class="rules">
+  <li><strong>Byzantine faults.</strong> The notes say Lamport "proved the sufficiency of 3n using digital signatures". In the 1982 paper, signed messages allow agreement with <em>any</em> number of traitors. The 3f + 1 bound is for unsigned, oral messages.</li>
+  <li><strong>State machine replication.</strong> The notes list 3 replicas "for fault detection". Comparing two copies is enough to <em>detect</em> a difference; 2f + 1 replicas are needed to <em>outvote</em> f faulty ones. The page also separates crash faults (2f + 1) from Byzantine agreement (3f + 1).</li>
+  <li><strong>Merkle trees.</strong> A second-preimage attack forges a different set of <em>leaves</em> with the same root, not a different document. The fix is to prefix leaf and node hashes differently, as RFC 6962 does.</li>
+  <li><strong>Ethereum.</strong> We dropped figures that date quickly: market rank, a 2023 client version, a 2023 node count and a 2016 throughput figure. The energy saving from The Merge is now the over 99.98% cited on ethereum.org, not 99%. Serpent, LLL and Mutan are retired.</li>
+  <li><strong>Chainlink.</strong> It is no longer only "built on Ethereum": it runs on many chains. The notes' "election data" example is replaced with the main real use, price feeds.</li>
+  <li><strong>Format.</strong> <code>Ethereum.json</code> and <code>Chainlink.json</code> contain <code>//</code> comment lines, which JSON does not allow, so standard JSON parsers reject them. They are kept as they are, because they are block payloads.</li>
+  <li><strong>Unverified claims.</strong> We left out the notes' claims about submarines, airliners and spacecraft, because we could not confirm them from a primary source.</li>
+</ul>
+
+<h2 id="sources">Sources</h2>
+<ul class="sources">
+  <li>Lamport, Shostak and Pease, <a href="https://lamport.azurewebsites.net/pubs/byz.pdf" rel="noopener">The Byzantine Generals Problem</a> (1982), and <a href="https://lamport.azurewebsites.net/pubs/reaching.pdf" rel="noopener">Reaching Agreement in the Presence of Faults</a> (1980; <a href="https://www.podc.org/dijkstra/2005/" rel="noopener">Dijkstra Prize 2005</a>).</li>
+  <li>Fred Schneider, <a href="https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf" rel="noopener">Implementing Fault-Tolerant Services Using the State Machine Approach</a> (1990).</li>
+  <li>Leslie Lamport, <a href="https://lamport.azurewebsites.net/pubs/paxos-simple.pdf" rel="noopener">Paxos Made Simple</a>, and the <a href="https://raft.github.io/" rel="noopener">Raft consensus algorithm</a>.</li>
+  <li>Castro and Liskov, <a href="https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf" rel="noopener">Practical Byzantine Fault Tolerance</a> (1999).</li>
+  <li><a href="https://datatracker.ietf.org/doc/html/rfc6962" rel="noopener">RFC 6962, Certificate Transparency</a>, and <a href="https://docs.ipfs.tech/concepts/merkle-dag/" rel="noopener">IPFS: Merkle DAGs</a>.</li>
+  <li>Satoshi Nakamoto, <a href="https://bitcoin.org/bitcoin.pdf" rel="noopener">Bitcoin: A Peer-to-Peer Electronic Cash System</a>.</li>
+  <li>ethereum.org: <a href="https://ethereum.org/en/whitepaper/" rel="noopener">white paper</a>, <a href="https://ethereum.org/en/developers/docs/evm/" rel="noopener">EVM</a>, <a href="https://ethereum.org/en/developers/docs/gas/" rel="noopener">gas</a>, <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" rel="noopener">proof of stake</a>, <a href="https://ethereum.org/en/roadmap/merge/" rel="noopener">The Merge</a> and <a href="https://ethereum.org/en/energy-consumption/" rel="noopener">energy consumption</a>. <a href="https://eips.ethereum.org/EIPS/eip-20" rel="noopener">EIP-20</a>, <a href="https://eips.ethereum.org/EIPS/eip-721" rel="noopener">EIP-721</a> and <a href="https://eips.ethereum.org/EIPS/eip-1559" rel="noopener">EIP-1559</a>.</li>
+  <li>Chainlink <a href="https://research.chain.link/whitepaper-v1.pdf" rel="noopener">white paper</a> (2017) and <a href="https://research.chain.link/whitepaper-v2.pdf" rel="noopener">Chainlink 2.0</a> (2021), <a href="https://docs.chain.link/data-feeds" rel="noopener">Data Feeds</a> and <a href="https://docs.chain.link/vrf" rel="noopener">VRF</a> documentation.</li>
+</ul>
+
+<h2 id="contributing">Contributing</h2>
+<p>Pages are HTML files in <code>_src/pages/</code>, and the chain order is in <code>_src/blocks.json</code>. Edit them, run <code>python _src/build.py</code>, and open a pull request on <a href="https://github.com/SolutionsAsService/Web3" rel="noopener">GitHub</a>. Adding a new topic means adding its notes to <code>site/data/</code> as a new block at the end of the chain.</p>
+</div></div>

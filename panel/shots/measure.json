@@ -1,0 +1,3172 @@
+{
+ "index-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 2143,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "The About page",
+    "w": 131,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html#chain",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Five blocks, hash to oracle.",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "merkle-trees-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 4083,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "RFC 6962",
+    "w": 76,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Merkle DAG",
+    "w": 92,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "#hashes",
+   "#tree",
+   "#proofs",
+   "#safety",
+   "#uses",
+   "#record",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "data/MerkleTree.yaml",
+   "state-machine-replication.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Hashes and Merkle trees",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "state-machine-replication-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3559,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "the next block",
+    "w": 120,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Ethereum",
+    "w": 79,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "#idea",
+   "#log",
+   "#how-many",
+   "#steps",
+   "#to-blockchains",
+   "#record",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/StateMachineReplication.json",
+   "merkle-trees.html",
+   "byzantine-faults.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "State machine replication",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "byzantine-faults-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3966,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Reaching Agreement in the Pres",
+    "w": 380,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "2005 Dijkstra Prize",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Practical Byzantine Fault Tole",
+    "w": 346,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Bitcoin paper",
+    "w": 110,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "state machine replication",
+    "w": 209,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "state-machine-replication.html",
+   "#problem",
+   "#three",
+   "#signatures",
+   "#pbft",
+   "#blockchains",
+   "#record",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://bitcoin.org/bitcoin.pdf",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "data/ByzantineFault.json",
+   "data/ByzantineFault.yaml",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Byzantine faults and agreement",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "ethereum-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3850,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2013 white paper",
+    "w": 140,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Ethereum Virtual Machine (EVM)",
+    "w": 262,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "state machine replication",
+    "w": 209,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "oracles",
+    "w": 60,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-1559",
+    "w": 69,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "ethereum.org's gas page",
+    "w": 176,
+    "h": 18
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #2",
+    "w": 70,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "cited on ethereum.org",
+    "w": 183,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "byzantine-faults.html",
+   "#what",
+   "#accounts",
+   "#evm",
+   "#gas",
+   "#tokens",
+   "#merge",
+   "#record",
+   "https://ethereum.org/en/whitepaper/",
+   "merkle-trees.html",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "state-machine-replication.html",
+   "chainlink.html",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "byzantine-faults.html",
+   "https://ethereum.org/en/energy-consumption/",
+   "data/Ethereum.json",
+   "byzantine-faults.html",
+   "chainlink.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Ethereum",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "chainlink-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3423,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2017 white paper",
+    "w": 141,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink 2.0 white paper",
+    "w": 206,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink Data Feeds",
+    "w": 170,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #1",
+    "w": 67,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #2",
+    "w": 70,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "ethereum.html",
+   "#problem",
+   "#network",
+   "#services",
+   "#link",
+   "#full-circle",
+   "#record",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/Chainlink.json",
+   "ethereum.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Chainlink and oracles",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "about-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 2878,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "The Byzantine Generals Problem",
+    "w": 264,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Dijkstra Prize 2005",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Implementing Fault-Tolerant Se",
+    "w": 594,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Paxos Made Simple",
+    "w": 157,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Raft consensus algorithm",
+    "w": 211,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Practical Byzantine Fault Tole",
+    "w": 288,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "RFC 6962, Certificate Transpar",
+    "w": 288,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "IPFS: Merkle DAGs",
+    "w": 143,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Bitcoin: A Peer-to-Peer Electr",
+    "w": 385,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 97,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EVM",
+    "w": 35,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "gas",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "energy consumption",
+    "w": 171,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-1559",
+    "w": 69,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 98,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink 2.0",
+    "w": 103,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Data Feeds",
+    "w": 92,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "VRF",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "GitHub",
+    "w": 56,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf",
+   "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf",
+   "https://raft.github.io/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "https://bitcoin.org/bitcoin.pdf",
+   "https://ethereum.org/en/whitepaper/",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/energy-consumption/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "https://github.com/SolutionsAsService/Web3",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "About Five Blocks",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "404-1440-light": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 900,
+  "lowContrast": [],
+  "smallTargets": [],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Not on this chain.",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "index-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 3708,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "The About page",
+    "w": 131,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html#chain",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Five blocks, hash to oracle.",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "merkle-trees-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 6172,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Merkle DAG",
+    "w": 92,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "#hashes",
+   "#tree",
+   "#proofs",
+   "#safety",
+   "#uses",
+   "#record",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "data/MerkleTree.yaml",
+   "state-machine-replication.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Hashes and Merkle trees",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "state-machine-replication-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 5295,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Ethereum",
+    "w": 79,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "#idea",
+   "#log",
+   "#how-many",
+   "#steps",
+   "#to-blockchains",
+   "#record",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/StateMachineReplication.json",
+   "merkle-trees.html",
+   "byzantine-faults.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "State machine replication",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "byzantine-faults-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 6352,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2005 Dijkstra Prize",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Practical Byzantine Fault Tole",
+    "w": 346,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The next block, Ethereum,",
+    "w": 213,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "state-machine-replication.html",
+   "#problem",
+   "#three",
+   "#signatures",
+   "#pbft",
+   "#blockchains",
+   "#record",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://bitcoin.org/bitcoin.pdf",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "data/ByzantineFault.json",
+   "data/ByzantineFault.yaml",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Byzantine faults and agreement",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "ethereum-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 6342,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "state machine replication",
+    "w": 209,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "oracles",
+    "w": 60,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-1559",
+    "w": 69,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "ethereum.org's gas page",
+    "w": 176,
+    "h": 18
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #2",
+    "w": 70,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "cited on ethereum.org",
+    "w": 183,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "byzantine-faults.html",
+   "#what",
+   "#accounts",
+   "#evm",
+   "#gas",
+   "#tokens",
+   "#merge",
+   "#record",
+   "https://ethereum.org/en/whitepaper/",
+   "merkle-trees.html",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "state-machine-replication.html",
+   "chainlink.html",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "byzantine-faults.html",
+   "https://ethereum.org/en/energy-consumption/",
+   "data/Ethereum.json",
+   "byzantine-faults.html",
+   "chainlink.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Ethereum",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "chainlink-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 5220,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2017 white paper",
+    "w": 141,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink Data Feeds",
+    "w": 170,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #1",
+    "w": 67,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #3",
+    "w": 70,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "ethereum.html",
+   "#problem",
+   "#network",
+   "#services",
+   "#link",
+   "#full-circle",
+   "#record",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/Chainlink.json",
+   "ethereum.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Chainlink and oracles",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "about-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 4332,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Dijkstra Prize 2005",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Paxos Made Simple",
+    "w": 157,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Raft consensus algorithm",
+    "w": 211,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "RFC 6962, Certificate Transpar",
+    "w": 288,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "IPFS: Merkle DAGs",
+    "w": 143,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 97,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EVM",
+    "w": 35,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "gas",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 98,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink 2.0",
+    "w": 103,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Data Feeds",
+    "w": 92,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "VRF",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "GitHub",
+    "w": 56,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf",
+   "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf",
+   "https://raft.github.io/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "https://bitcoin.org/bitcoin.pdf",
+   "https://ethereum.org/en/whitepaper/",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/energy-consumption/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "https://github.com/SolutionsAsService/Web3",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "About Five Blocks",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "404-390-light": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 844,
+  "lowContrast": [],
+  "smallTargets": [],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Not on this chain.",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": [],
+  "focusWalk": [
+   {
+    "el": "A Skip to content",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A Five Blocks",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #0Merkle trees",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #1Replication",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #2Byzantine faults",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   },
+   {
+    "el": "A #3Ethereum",
+    "outline": "solid 3px rgb(58, 104, 0)",
+    "inView": true
+   }
+  ]
+ },
+ "index-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 2143,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "The About page",
+    "w": 131,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html#chain",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Five blocks, hash to oracle.",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "merkle-trees-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 4083,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "RFC 6962",
+    "w": 76,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Merkle DAG",
+    "w": 92,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "#hashes",
+   "#tree",
+   "#proofs",
+   "#safety",
+   "#uses",
+   "#record",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "data/MerkleTree.yaml",
+   "state-machine-replication.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Hashes and Merkle trees",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "state-machine-replication-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3559,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "the next block",
+    "w": 120,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Ethereum",
+    "w": 79,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "#idea",
+   "#log",
+   "#how-many",
+   "#steps",
+   "#to-blockchains",
+   "#record",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/StateMachineReplication.json",
+   "merkle-trees.html",
+   "byzantine-faults.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "State machine replication",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "byzantine-faults-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3966,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Reaching Agreement in the Pres",
+    "w": 380,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "2005 Dijkstra Prize",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Practical Byzantine Fault Tole",
+    "w": 346,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Bitcoin paper",
+    "w": 110,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "state machine replication",
+    "w": 209,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "state-machine-replication.html",
+   "#problem",
+   "#three",
+   "#signatures",
+   "#pbft",
+   "#blockchains",
+   "#record",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://bitcoin.org/bitcoin.pdf",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "data/ByzantineFault.json",
+   "data/ByzantineFault.yaml",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Byzantine faults and agreement",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "ethereum-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3850,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2013 white paper",
+    "w": 140,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Ethereum Virtual Machine (EVM)",
+    "w": 262,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "state machine replication",
+    "w": 209,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "oracles",
+    "w": 60,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-1559",
+    "w": 69,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "ethereum.org's gas page",
+    "w": 176,
+    "h": 18
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #2",
+    "w": 70,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "cited on ethereum.org",
+    "w": 183,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "byzantine-faults.html",
+   "#what",
+   "#accounts",
+   "#evm",
+   "#gas",
+   "#tokens",
+   "#merge",
+   "#record",
+   "https://ethereum.org/en/whitepaper/",
+   "merkle-trees.html",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "state-machine-replication.html",
+   "chainlink.html",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "byzantine-faults.html",
+   "https://ethereum.org/en/energy-consumption/",
+   "data/Ethereum.json",
+   "byzantine-faults.html",
+   "chainlink.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Ethereum",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "chainlink-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 3423,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2017 white paper",
+    "w": 141,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink 2.0 white paper",
+    "w": 206,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink Data Feeds",
+    "w": 170,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #1",
+    "w": 67,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #2",
+    "w": 70,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "ethereum.html",
+   "#problem",
+   "#network",
+   "#services",
+   "#link",
+   "#full-circle",
+   "#record",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/Chainlink.json",
+   "ethereum.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Chainlink and oracles",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "about-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 2878,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "The Byzantine Generals Problem",
+    "w": 264,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Dijkstra Prize 2005",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Implementing Fault-Tolerant Se",
+    "w": 594,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Paxos Made Simple",
+    "w": 157,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Raft consensus algorithm",
+    "w": 211,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Practical Byzantine Fault Tole",
+    "w": 288,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "RFC 6962, Certificate Transpar",
+    "w": 288,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "IPFS: Merkle DAGs",
+    "w": 143,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Bitcoin: A Peer-to-Peer Electr",
+    "w": 385,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 97,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EVM",
+    "w": 35,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "gas",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "energy consumption",
+    "w": 171,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-1559",
+    "w": 69,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 98,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink 2.0",
+    "w": 103,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Data Feeds",
+    "w": 92,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "VRF",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "GitHub",
+    "w": 56,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf",
+   "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf",
+   "https://raft.github.io/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "https://bitcoin.org/bitcoin.pdf",
+   "https://ethereum.org/en/whitepaper/",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/energy-consumption/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "https://github.com/SolutionsAsService/Web3",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "About Five Blocks",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "404-1440-dark": {
+  "scrollW": 1440,
+  "innerW": 1440,
+  "height": 900,
+  "lowContrast": [],
+  "smallTargets": [],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Not on this chain.",
+   "fontSize": "86.4px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "index-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 3708,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "The About page",
+    "w": 131,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html#chain",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Five blocks, hash to oracle.",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "merkle-trees-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 6172,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Merkle DAG",
+    "w": 92,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "#hashes",
+   "#tree",
+   "#proofs",
+   "#safety",
+   "#uses",
+   "#record",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "data/MerkleTree.yaml",
+   "state-machine-replication.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Hashes and Merkle trees",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "state-machine-replication-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 5295,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Ethereum",
+    "w": 79,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "merkle-trees.html",
+   "#idea",
+   "#log",
+   "#how-many",
+   "#steps",
+   "#to-blockchains",
+   "#record",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/StateMachineReplication.json",
+   "merkle-trees.html",
+   "byzantine-faults.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "State machine replication",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "byzantine-faults-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 6352,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2005 Dijkstra Prize",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Practical Byzantine Fault Tole",
+    "w": 346,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The next block, Ethereum,",
+    "w": 213,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "state-machine-replication.html",
+   "#problem",
+   "#three",
+   "#signatures",
+   "#pbft",
+   "#blockchains",
+   "#record",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://bitcoin.org/bitcoin.pdf",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "data/ByzantineFault.json",
+   "data/ByzantineFault.yaml",
+   "state-machine-replication.html",
+   "ethereum.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Byzantine faults and agreement",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "ethereum-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 6342,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "state machine replication",
+    "w": 209,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "oracles",
+    "w": 60,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-1559",
+    "w": 69,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "ethereum.org's gas page",
+    "w": 176,
+    "h": 18
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #2",
+    "w": 70,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "cited on ethereum.org",
+    "w": 183,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "byzantine-faults.html",
+   "#what",
+   "#accounts",
+   "#evm",
+   "#gas",
+   "#tokens",
+   "#merge",
+   "#record",
+   "https://ethereum.org/en/whitepaper/",
+   "merkle-trees.html",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "state-machine-replication.html",
+   "chainlink.html",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "byzantine-faults.html",
+   "https://ethereum.org/en/energy-consumption/",
+   "data/Ethereum.json",
+   "byzantine-faults.html",
+   "chainlink.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Ethereum",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "chainlink-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 5220,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "2017 white paper",
+    "w": 141,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink Data Feeds",
+    "w": 170,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #0",
+    "w": 71,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #1",
+    "w": 67,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "block #3",
+    "w": 70,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "ethereum.html",
+   "#problem",
+   "#network",
+   "#services",
+   "#link",
+   "#full-circle",
+   "#record",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "data/Chainlink.json",
+   "ethereum.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Chainlink and oracles",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "JetBrains Mono 600",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "about-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 4332,
+  "lowContrast": [],
+  "smallTargets": [
+   {
+    "tag": "A",
+    "text": "Dijkstra Prize 2005",
+    "w": 151,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Paxos Made Simple",
+    "w": 157,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Raft consensus algorithm",
+    "w": 211,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "RFC 6962, Certificate Transpar",
+    "w": 288,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "IPFS: Merkle DAGs",
+    "w": 143,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 97,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EVM",
+    "w": 35,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "gas",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "proof of stake",
+    "w": 117,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "The Merge",
+    "w": 87,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-20",
+    "w": 52,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "EIP-721",
+    "w": 57,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "white paper",
+    "w": 98,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Chainlink 2.0",
+    "w": 103,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "Data Feeds",
+    "w": 92,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "VRF",
+    "w": 30,
+    "h": 22
+   },
+   {
+    "tag": "A",
+    "text": "GitHub",
+    "w": 56,
+    "h": 22
+   }
+  ],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "https://lamport.azurewebsites.net/pubs/byz.pdf",
+   "https://lamport.azurewebsites.net/pubs/reaching.pdf",
+   "https://www.podc.org/dijkstra/2005/",
+   "https://www.cs.cornell.edu/fbs/publications/SMSurvey.pdf",
+   "https://lamport.azurewebsites.net/pubs/paxos-simple.pdf",
+   "https://raft.github.io/",
+   "https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf",
+   "https://datatracker.ietf.org/doc/html/rfc6962",
+   "https://docs.ipfs.tech/concepts/merkle-dag/",
+   "https://bitcoin.org/bitcoin.pdf",
+   "https://ethereum.org/en/whitepaper/",
+   "https://ethereum.org/en/developers/docs/evm/",
+   "https://ethereum.org/en/developers/docs/gas/",
+   "https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/",
+   "https://ethereum.org/en/roadmap/merge/",
+   "https://ethereum.org/en/energy-consumption/",
+   "https://eips.ethereum.org/EIPS/eip-20",
+   "https://eips.ethereum.org/EIPS/eip-721",
+   "https://eips.ethereum.org/EIPS/eip-1559",
+   "https://research.chain.link/whitepaper-v1.pdf",
+   "https://research.chain.link/whitepaper-v2.pdf",
+   "https://docs.chain.link/data-feeds",
+   "https://docs.chain.link/vrf",
+   "https://github.com/SolutionsAsService/Web3",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "About Five Blocks",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ },
+ "404-390-dark": {
+  "scrollW": 390,
+  "innerW": 390,
+  "height": 844,
+  "lowContrast": [],
+  "smallTargets": [],
+  "links": [
+   "#main",
+   "index.html",
+   "merkle-trees.html",
+   "state-machine-replication.html",
+   "byzantine-faults.html",
+   "ethereum.html",
+   "chainlink.html",
+   "about.html",
+   "index.html",
+   "about.html#sources",
+   "https://github.com/SolutionsAsService/Web3",
+   "https://demo.ultimatebusinessmachines.com/portfolio"
+  ],
+  "h1": {
+   "text": "Not on this chain.",
+   "fontSize": "41.6px",
+   "family": "\"Space Grotesk\"",
+   "wdth": "normal"
+  },
+  "fontsLoaded": [
+   "JetBrains Mono 400",
+   "Space Grotesk 400",
+   "Space Grotesk 500",
+   "Space Grotesk 700"
+  ],
+  "loadtest": []
+ }
+}

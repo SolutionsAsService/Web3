@@ -1,0 +1,44 @@
+title: Chainlink and oracles · Five Blocks
+description: Why blockchains need oracles, how a decentralised oracle network such as Chainlink aggregates reports to resist faulty nodes, data feeds and verifiable randomness, and the LINK token.
+---
+<h2 id="problem">The oracle problem</h2>
+<p>Smart contracts are deterministic: every node must get the same result, so a contract cannot call a web API or read a sensor. Different nodes might see different answers, and the chain would split. So how does a crop-insurance contract learn the rainfall, or a lending contract the price of an asset?</p>
+<p>Something must <em>post the data on-chain</em> as a transaction. That something is an <strong>oracle</strong>. If one party runs the oracle, the contract is only as trustworthy as that party, which undoes the point of a blockchain. This is the <strong>oracle problem</strong>.</p>
+
+<h2 id="network">A decentralised oracle network</h2>
+<p><strong>Chainlink</strong> answers the oracle problem with the same idea as the chain itself: don't trust one reporter, trust a quorum. It was described in a <a href="https://research.chain.link/whitepaper-v1.pdf" rel="noopener">2017 white paper</a> by Steve Ellis, Ari Juels and Sergey Nazarov, and its main network launched in 2019.</p>
+<ol class="steps">
+  <li>Many independent <strong>node operators</strong> each fetch the value from several data sources.</li>
+  <li>Each signs and submits its report.</li>
+  <li>The reports are <strong>aggregated</strong>, typically by taking the median, and the result is written on-chain for contracts to read.</li>
+</ol>
+<p>A median is robust in a Byzantine sense. As long as fewer than half the reports are faulty, the median lies between two honest values, however wild the faulty ones are.</p>
+<form class="lab" id="oracle" aria-labelledby="or-h" onsubmit="return false">
+  <h3 id="or-h">Try it: one node lies</h3>
+  <p class="lab-note">Seven nodes report a temperature in °C. Drag node 7 as far as you like, and watch the mean move while the median barely changes.</p>
+  <div class="or-nodes" id="or-nodes" aria-hidden="true"></div>
+  <label for="or-liar" class="or-liar">Node 7 reports <output id="or-liar-out" for="or-liar" class="mono">21.4</output> °C</label>
+  <input id="or-liar" type="range" min="-50" max="150" step="0.1" value="21.4">
+  <p class="lab-out mono" id="or-out" role="status">Median 21.4 °C · mean 21.4 °C</p>
+</form>
+<p>Since 2021, Chainlink's design has computed reports off-chain and posted one signed result per round (Off-Chain Reporting), which costs far less gas than one transaction per node. The <a href="https://research.chain.link/whitepaper-v2.pdf" rel="noopener">Chainlink 2.0 white paper</a> (2021) extends the network toward general off-chain computation.</p>
+
+<h2 id="services">What oracle networks provide</h2>
+<dl class="parts">
+  <div><dt>Data feeds</dt><dd>Regularly updated on-chain values, mostly asset prices used by lending and trading contracts. See <a href="https://docs.chain.link/data-feeds" rel="noopener">Chainlink Data Feeds</a>.</dd></div>
+  <div><dt>Verifiable randomness</dt><dd>A contract can't generate a fair random number by itself. A <a href="https://docs.chain.link/vrf" rel="noopener">verifiable random function (VRF)</a> gives a random value with a cryptographic proof that the oracle could not choose or predict it.</dd></div>
+  <div><dt>Privacy-preserving data</dt><dd>DECO, developed at Cornell and acquired by Chainlink in 2020, lets a user prove a fact about data from a website, such as "my balance is over X", without revealing the data. Town Crier, acquired in 2018, used trusted hardware to fetch web data.</dd></div>
+</dl>
+
+<h2 id="link">The LINK token</h2>
+<p>Node operators are paid in <strong>LINK</strong>, a token on Ethereum with a fixed supply of one billion. LINK follows ERC-677, an extension of ERC-20 that can transfer tokens and call the receiving contract in one step. The network also runs on many other blockchains besides Ethereum.</p>
+<p class="tip">This site explains how these systems work. It is not advice to buy, sell or hold any token.</p>
+
+<h2 id="full-circle">Full circle</h2>
+<p>An oracle network uses the ideas of all four earlier blocks:</p>
+<ul class="rules">
+  <li>Reports are signed, and results are committed by hash (<a href="merkle-trees.html">block #0</a>).</li>
+  <li>Nodes must agree on one value per round (<a href="state-machine-replication.html">block #1</a>).</li>
+  <li>Some nodes may lie, so the threshold and the median carry the trust (<a href="byzantine-faults.html">block #2</a>).</li>
+  <li>The answer is delivered to a deterministic state machine that couldn't fetch it itself (<a href="ethereum.html">block #3</a>).</li>
+</ul>

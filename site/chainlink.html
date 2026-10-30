@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chainlink and oracles · Five Blocks</title>
+<meta name="description" content="Why blockchains need oracles, how a decentralised oracle network such as Chainlink aggregates reports to resist faulty nodes, data feeds and verifiable randomness, and the LINK token.">
+<meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="9" width="9" height="14" class="b0"/><rect x="21" y="9" width="9" height="14" class="b2"/><rect x="11.5" y="9" width="9" height="14" class="b1"/><path d="M11 16h1M20 16h1" class="bl"/></svg><span>Five Blocks</span></a>
+    <nav aria-label="Blocks"><ul class="bnav"><li><a href="merkle-trees.html"><span class="h" aria-hidden="true">#0</span>Merkle trees</a></li><li><a href="state-machine-replication.html"><span class="h" aria-hidden="true">#1</span>Replication</a></li><li><a href="byzantine-faults.html"><span class="h" aria-hidden="true">#2</span>Byzantine faults</a></li><li><a href="ethereum.html"><span class="h" aria-hidden="true">#3</span>Ethereum</a></li><li><a href="chainlink.html" aria-current="page"><span class="h" aria-hidden="true">#4</span>Oracles</a></li><li><a href="about.html">About</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<header class="bhead">
+  <div class="wrap bhead-in">
+    <div class="bh-title">
+      <p class="height">Block <span class="mono">#4</span> of 5</p>
+      <h1>Chainlink and oracles</h1>
+      <p class="lede">A blockchain can&#x27;t see the outside world. Oracle networks bring data in, using the same fault-tolerance ideas as the chain itself.</p>
+    </div>
+    <dl class="header-card" aria-label="Block header">
+      <div class="hc-id"><svg class="idn" viewBox="-.5 -.5 6 6" width="72" height="72" aria-hidden="true" focusable="false" style="--hue:30"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></g></svg></div>
+      <div><dt>Hash</dt><dd class="mono hash" title="15238c3606d08555fbd6b2e8aeff68258d3db0da1f16381f33af3b93faddc754">15238c3606…ddc754</dd></div>
+      <div><dt>Previous</dt><dd><a href="ethereum.html" class="mono">cc1864e2a8…30df33</a></dd></div>
+      <div><dt>Payload</dt><dd class="mono">Chainlink.json · 2,194 bytes</dd></div>
+      <div><dt>First committed</dt><dd class="mono">2024-01-30</dd></div>
+    </dl>
+  </div>
+</header>
+<div class="wrap article">
+  <nav class="toc" aria-label="In this block"><p class="toc-h">In this block</p><ol><li><a href="#problem">The oracle problem</a></li><li><a href="#network">A decentralised oracle network</a></li><li><a href="#services">What oracle networks provide</a></li><li><a href="#link">The LINK token</a></li><li><a href="#full-circle">Full circle</a></li><li><a href="#record">The original record</a></li></ol></nav>
+  <article class="prose">
+<h2 id="problem">The oracle problem</h2>
+<p>Smart contracts are deterministic: every node must get the same result, so a contract cannot call a web API or read a sensor. Different nodes might see different answers, and the chain would split. So how does a crop-insurance contract learn the rainfall, or a lending contract the price of an asset?</p>
+<p>Something must <em>post the data on-chain</em> as a transaction. That something is an <strong>oracle</strong>. If one party runs the oracle, the contract is only as trustworthy as that party, which undoes the point of a blockchain. This is the <strong>oracle problem</strong>.</p>
+
+<h2 id="network">A decentralised oracle network</h2>
+<p><strong>Chainlink</strong> answers the oracle problem with the same idea as the chain itself: don't trust one reporter, trust a quorum. It was described in a <a href="https://research.chain.link/whitepaper-v1.pdf" rel="noopener">2017 white paper</a> by Steve Ellis, Ari Juels and Sergey Nazarov, and its main network launched in 2019.</p>
+<ol class="steps">
+  <li>Many independent <strong>node operators</strong> each fetch the value from several data sources.</li>
+  <li>Each signs and submits its report.</li>
+  <li>The reports are <strong>aggregated</strong>, typically by taking the median, and the result is written on-chain for contracts to read.</li>
+</ol>
+<p>A median is robust in a Byzantine sense. As long as fewer than half the reports are faulty, the median lies between two honest values, however wild the faulty ones are.</p>
+<form class="lab" id="oracle" aria-labelledby="or-h" onsubmit="return false">
+  <h3 id="or-h">Try it: one node lies</h3>
+  <p class="lab-note">Seven nodes report a temperature in °C. Drag node 7 as far as you like, and watch the mean move while the median barely changes.</p>
+  <div class="or-nodes" id="or-nodes" aria-hidden="true"></div>
+  <label for="or-liar" class="or-liar">Node 7 reports <output id="or-liar-out" for="or-liar" class="mono">21.4</output> °C</label>
+  <input id="or-liar" type="range" min="-50" max="150" step="0.1" value="21.4">
+  <p class="lab-out mono" id="or-out" role="status">Median 21.4 °C · mean 21.4 °C</p>
+</form>
+<p>Since 2021, Chainlink's design has computed reports off-chain and posted one signed result per round (Off-Chain Reporting), which costs far less gas than one transaction per node. The <a href="https://research.chain.link/whitepaper-v2.pdf" rel="noopener">Chainlink 2.0 white paper</a> (2021) extends the network toward general off-chain computation.</p>
+
+<h2 id="services">What oracle networks provide</h2>
+<dl class="parts">
+  <div><dt>Data feeds</dt><dd>Regularly updated on-chain values, mostly asset prices used by lending and trading contracts. See <a href="https://docs.chain.link/data-feeds" rel="noopener">Chainlink Data Feeds</a>.</dd></div>
+  <div><dt>Verifiable randomness</dt><dd>A contract can't generate a fair random number by itself. A <a href="https://docs.chain.link/vrf" rel="noopener">verifiable random function (VRF)</a> gives a random value with a cryptographic proof that the oracle could not choose or predict it.</dd></div>
+  <div><dt>Privacy-preserving data</dt><dd>DECO, developed at Cornell and acquired by Chainlink in 2020, lets a user prove a fact about data from a website, such as "my balance is over X", without revealing the data. Town Crier, acquired in 2018, used trusted hardware to fetch web data.</dd></div>
+</dl>
+
+<h2 id="link">The LINK token</h2>
+<p>Node operators are paid in <strong>LINK</strong>, a token on Ethereum with a fixed supply of one billion. LINK follows ERC-677, an extension of ERC-20 that can transfer tokens and call the receiving contract in one step. The network also runs on many other blockchains besides Ethereum.</p>
+<p class="tip">This site explains how these systems work. It is not advice to buy, sell or hold any token.</p>
+
+<h2 id="full-circle">Full circle</h2>
+<p>An oracle network uses the ideas of all four earlier blocks:</p>
+<ul class="rules">
+  <li>Reports are signed, and results are committed by hash (<a href="merkle-trees.html">block #0</a>).</li>
+  <li>Nodes must agree on one value per round (<a href="state-machine-replication.html">block #1</a>).</li>
+  <li>Some nodes may lie, so the threshold and the median carry the trust (<a href="byzantine-faults.html">block #2</a>).</li>
+  <li>The answer is delivered to a deterministic state machine that couldn't fetch it itself (<a href="ethereum.html">block #3</a>).</li>
+</ul>
+<section class="record" aria-labelledby="record">
+  <h2 id="record">The original record</h2>
+  <p>This page grew from the note below, kept byte for byte. They are this block's payload, so changing one character would change its hash and break every block after it.</p>
+  <details class="rec"><summary><span class="mono">Chainlink.json</span> <span class="muted">· 2,194 bytes</span></summary><div class="code" tabindex="0" aria-label="Chainlink.json, scrolls sideways"><pre>{
+  &quot;Chainlink&quot;: {
+    &quot;Description&quot;: &quot;Decentralized blockchain oracle network built on Ethereum, facilitating transfer of tamper-proof data from off-chain to on-chain smart contracts.&quot;,
+    &quot;Denominations&quot;: {
+      &quot;Plural&quot;: &quot;Chainlink&quot;,
+      &quot;Code&quot;: &quot;LINK&quot;
+    },
+    &quot;Development&quot;: {
+      &quot;OriginalAuthors&quot;: [&quot;Sergey Nazarov&quot;, &quot;Steve Ellis&quot;, &quot;Dr. Ari Juels&quot;],
+      &quot;WhitePaper&quot;: &quot;chain.link/whitepaper&quot;,
+      &quot;CodeRepository&quot;: &quot;github.com/smartcontractkit/chainlink&quot;,
+      &quot;ProgrammingLanguages&quot;: [&quot;Solidity&quot;, &quot;Go&quot;],
+      &quot;OperatingSystem&quot;: &quot;Blockchain-agnostic&quot;,
+      &quot;SourceModel&quot;: &quot;Open source&quot;,
+      &quot;License&quot;: &quot;MIT License&quot;
+    },
+    &quot;Ledger&quot;: {
+      &quot;SupplyLimit&quot;: 1000000000
+    },
+    &quot;Website&quot;: &quot;chainlinklabs.com&quot;,
+    &quot;History&quot;: {
+      &quot;CreationYear&quot;: 2017,
+      &quot;LaunchYear&quot;: 2019,
+      &quot;KeyIntegrations&quot;: {
+        &quot;2018&quot;: &quot;Town Crier&quot;,
+        &quot;2020&quot;: &quot;DECO&quot;
+      },
+      &quot;TrademarkRegistration&quot;: {
+        &quot;Date&quot;: &quot;2019-03-12&quot;,
+        &quot;Entity&quot;: &quot;Smartcontract Chainlink Sezc, Ltd.&quot;
+      },
+      &quot;SecondWhitePaper&quot;: {
+        &quot;Title&quot;: &quot;Chainlink 2.0: Next Steps in the Evolution of Decentralized Oracle Networks&quot;,
+        &quot;PublicationYear&quot;: 2021
+      }
+    },
+    &quot;Technology&quot;: {
+      &quot;OracleNetworkType&quot;: &quot;Decentralized&quot;,
+      &quot;KeyFunctions&quot;: [&quot;External Data Transfer&quot;, &quot;Off-chain Computation&quot;],
+      &quot;Features&quot;: {
+        &quot;VRF&quot;: &quot;Verifiable Random Function&quot;,
+        &quot;DataFeeds&quot;: &quot;Used for bringing election data on-chain&quot;
+      }
+    },
+    &quot;LinkToken&quot;: {
+      &quot;CompensationFor&quot;: &quot;Node Operators&quot;,
+      &quot;TokenType&quot;: &quot;ERC677 (extension of ERC-20)&quot;,
+      &quot;PreminedStatus&quot;: true,
+      &quot;ICOControversies&quot;: true,
+      &quot;Functionality&quot;: {
+        &quot;DataPayloads&quot;: &quot;Feed data from off-chain to smart contracts&quot;,
+        &quot;PaymentForServices&quot;: &quot;Pay node operators for data retrieval&quot;
+      },
+      &quot;Storage&quot;: &quot;ERC-20 compatible wallets&quot;
+    }
+  },
+  &quot;References&quot;: [
+    {
+      &quot;Title&quot;: &quot;ChainLink A Decentralized Oracle Network&quot;,
+      &quot;Authors&quot;: [&quot;Ellis, Steven&quot;, &quot;Juels, Ari&quot;, &quot;Nazarov, Sergey&quot;],
+      &quot;Date&quot;: &quot;4 September 2017&quot;,
+      &quot;URL&quot;: &quot;chain.link&quot;,
+      &quot;RetrievalDate&quot;: &quot;8 October 2022&quot;
+    },
+    // Additional references continue here
+  ]
+}
+</pre></div><p><a href="data/Chainlink.json" download>Download Chainlink.json</a></p></details>
+</section>
+  </article>
+</div>
+<div class="wrap"><nav class="pager" aria-label="Blocks"><a class="pg prev" href="ethereum.html"><small>← Block #3</small>Ethereum</a><a class="pg next" href="index.html"><small>Chain tip</small>Back to all five blocks</a></nav></div>
+</main>
+<footer class="foot"><div class="wrap">
+  <p>Five Blocks is an educational site. Nothing here is investment, legal or tax advice, and it does not track prices.</p>
+  <p><a href="about.html#sources">Sources</a> · <a href="https://github.com/SolutionsAsService/Web3" rel="noopener">Source on GitHub</a> · MIT licensed</p>
+  <p><a href="https://demo.ultimatebusinessmachines.com/portfolio">Part of the Ultimate Business Machines portfolio</a></p>
+</div></footer>
+<script src="js/blocks.js" defer></script>
+</body>
+</html>

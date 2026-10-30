@@ -1,0 +1,32 @@
+{
+  "ByzantineFault": {
+    "definition": "A condition in distributed computing systems where components may fail and there's imperfect information on whether a component has failed, leading to the need for consensus among components to avoid catastrophic system failure.",
+    "history": {
+      "origin": "Derived from the 'Byzantine Generals Problem', an allegory developed to illustrate the challenge of achieving consensus in the presence of unreliable actors. The term was coined from a colorful allegory involving army generals planning an attack on a city, originally cast as commanders of the Albanian army, later changed to 'Byzantine' to avoid potential offense.",
+      "keyDevelopments": [
+        {
+          "Shostak": "Demonstrated a minimum of 3n+1 computers are needed to overcome n faulty computers.",
+          "Pease": "Generalized the algorithm for any n > 0, proving 3n+1 is both necessary and sufficient.",
+          "Lamport": "Proved the sufficiency of 3n using digital signatures."
+        }
+      ],
+      "recognition": "Authors were awarded the 2005 Edsger W. Dijkstra Prize for their seminal paper, 'Reaching Agreement in the Presence of Faults'."
+    },
+    "mitigation": "Byzantine fault tolerance aims to defend against system component failures by ensuring operational components can continue providing service, assuming a sufficient number of correctly operating components remain. It requires consensus among components for correct operation, challenging due to the unrestricted nature of Byzantine failures.",
+    "solutions": {
+      "earlySolutions": "Described by Lamport, Shostak, and Pease, including scenarios with less than one-third disloyal generals, use of unforgeable message signatures, and variations for indirect communication among generals.",
+      "modernDevelopments": [
+        "Practical Byzantine Fault Tolerance (PBFT) introduced by Castro and Liskov in 1999, providing high-performance Byzantine state machine replication.",
+        "Subsequent protocols aimed at improving robustness and performance, including Q/U, HQ, Zyzzyva, ABsTRACTs, Aardvark, RBFT, and protocols leveraging trusted components like A2M-PBFT-EA and MinBFT."
+      ]
+    },
+    "applications": {
+      "computing": "Mechanisms assume repeating a message blocks the propagation of Byzantine symptoms, crucial for safety or security-critical systems. Testing for Byzantine symptoms requires specialized fault injectors.",
+      "military": "Byzantine errors observed during endurance testing of Virginia class submarines through at least 2005.",
+      "cryptocurrency": {
+        "Bitcoin": "Uses proof-of-work to overcome Byzantine failures, achieving a coherent global system state. Proof of stake blockchains also employ BFT algorithms."
+      },
+      "aviation": "Systems like Boeing 777 and 787 flight control systems, and SpaceX Dragon's design consider Byzantine fault tolerance for real-time operation with very low latency."
+    }
+  }
+}

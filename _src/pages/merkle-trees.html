@@ -1,0 +1,67 @@
+title: Hashes and Merkle trees · Five Blocks
+description: What a cryptographic hash is, how a Merkle tree lets one root hash vouch for a whole data set, how inclusion proofs work, and where Merkle trees are used, from Bitcoin to Git.
+---
+<h2 id="hashes">A fingerprint for data</h2>
+<p>A <strong>cryptographic hash function</strong> turns any input, a word or a whole film, into a short, fixed-size output called a hash or digest. SHA-256, used throughout this site, always gives 256 bits, written as 64 hexadecimal characters.</p>
+<p>A good hash function has these properties:</p>
+<ul class="rules">
+  <li><strong>Deterministic.</strong> The same input always gives the same hash.</li>
+  <li><strong>Avalanche.</strong> Change one character and about half the output bits flip. The new hash looks unrelated to the old one.</li>
+  <li><strong>One-way.</strong> Given a hash, you cannot work back to an input that produces it (preimage resistance).</li>
+  <li><strong>Collision-resistant.</strong> Nobody can find two different inputs with the same hash.</li>
+</ul>
+<form class="lab" id="hasher" aria-labelledby="hasher-h" onsubmit="return false">
+  <h3 id="hasher-h">Try it: SHA-256</h3>
+  <label for="h-in">Input</label>
+  <input id="h-in" type="text" value="hello, block" autocomplete="off" spellcheck="false">
+  <p class="lab-out"><span class="k">SHA-256</span> <output id="h-out" for="h-in" class="mono hash-out">computing…</output></p>
+  <p class="lab-note">Computed by your browser's built-in Web Crypto. Change a single letter and watch the whole hash change.</p>
+</form>
+
+<h2 id="tree">From one hash to a tree</h2>
+<p>To fingerprint a big data set, such as a block's transactions or the files in a download, you could hash it all at once. But then checking any one piece means downloading everything. Ralph Merkle's answer, from 1979, is to hash in a tree:</p>
+<ol class="steps">
+  <li>Split the data into blocks and hash each one. These hashes are the <strong>leaves</strong>.</li>
+  <li>Pair up neighbouring hashes, join each pair and hash it, to make the next level up.</li>
+  <li>Repeat until one hash is left: the <strong>Merkle root</strong>.</li>
+</ol>
+<p>The root commits to every leaf. Change one byte anywhere, and its leaf hash changes, then its parent, and so on, all the way to the root.</p>
+<div class="lab" id="merkle" aria-labelledby="merkle-h">
+  <h3 id="merkle-h">Try it: build a Merkle tree</h3>
+  <p class="lab-note">Edit any of the four records, or pick one to see its proof: the sibling hashes you need to check it against the root.</p>
+  <div class="mk-leaves">
+    <label>Record A<input data-leaf="0" value="Alice pays Bob 5" spellcheck="false"></label>
+    <label>Record B<input data-leaf="1" value="Bob pays Carol 2" spellcheck="false"></label>
+    <label>Record C<input data-leaf="2" value="Carol pays Dan 1" spellcheck="false"></label>
+    <label>Record D<input data-leaf="3" value="Dan pays Alice 3" spellcheck="false"></label>
+  </div>
+  <fieldset class="mk-pick"><legend>Prove record</legend>
+    <label><input type="radio" name="mk-proof" value="0" checked> A</label>
+    <label><input type="radio" name="mk-proof" value="1"> B</label>
+    <label><input type="radio" name="mk-proof" value="2"> C</label>
+    <label><input type="radio" name="mk-proof" value="3"> D</label>
+  </fieldset>
+  <div class="mk-tree" id="mk-tree" aria-live="polite">
+    <noscript><p>The tree is drawn by JavaScript. With it turned off, the steps above still describe exactly what it shows.</p></noscript>
+  </div>
+  <p class="lab-note">Leaves are hashed as SHA-256(0x00 ‖ record) and inner nodes as SHA-256(0x01 ‖ left ‖ right), the scheme from RFC 6962 explained below.</p>
+</div>
+
+<h2 id="proofs">Proving one piece</h2>
+<p>To prove that a record is in the tree, you don't need the other records, only the hashes along its path. Hash the record, combine it with its sibling, combine that with the next sibling up, and see whether you arrive at the root you already trust.</p>
+<p>The proof grows with the <em>logarithm</em> of the size. A tree with a million leaves needs only 20 sibling hashes, about 640 bytes. That is why a phone wallet can check that a transaction is in a Bitcoin block without downloading the block, a method the Bitcoin paper calls simplified payment verification.</p>
+
+<h2 id="safety">Keeping leaves and branches apart</h2>
+<p>A naive Merkle tree has a weakness. An attacker can present an inner node's two child hashes as if they were a leaf, and so prove a "record" that was never in the data, with the same root. This is called a <strong>second-preimage attack</strong>.</p>
+<p>The fix is to hash leaves and inner nodes differently. Certificate Transparency (<a href="https://datatracker.ietf.org/doc/html/rfc6962" rel="noopener">RFC 6962</a>) puts a <code>0x00</code> byte in front of every leaf and a <code>0x01</code> byte in front of every inner node, so a branch can never pass for a leaf. The tree above does the same.</p>
+
+<h2 id="uses">Where Merkle trees are used</h2>
+<dl class="parts">
+  <div><dt>Bitcoin</dt><dd>Each block header holds the Merkle root of the block's transactions.</dd></div>
+  <div><dt>Ethereum</dt><dd>Uses a variant, the Merkle Patricia trie, to commit to every account's state in each block header.</dd></div>
+  <div><dt>Git</dt><dd>Every commit, folder and file is named by its hash, forming a Merkle graph: the commit hash commits to the whole project history.</dd></div>
+  <div><dt>IPFS</dt><dd>Files are split into blocks and linked in a <a href="https://docs.ipfs.tech/concepts/merkle-dag/" rel="noopener">Merkle DAG</a>, so content is addressed by what it is, not where it lives.</dd></div>
+  <div><dt>Certificate Transparency</dt><dd>Public logs of every TLS certificate, provably append-only.</dd></div>
+  <div><dt>File systems and databases</dt><dd>ZFS and Btrfs checksum data in trees, and Cassandra and Dynamo-style databases compare Merkle trees to find replicas that disagree.</dd></div>
+</dl>
+<p>And this site: each page's hash covers its source files and the hash before it, which is a hash <em>chain</em>, the simplest relative of a Merkle tree.</p>

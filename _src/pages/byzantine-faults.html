@@ -1,0 +1,44 @@
+title: Byzantine faults and agreement · Five Blocks
+description: The Byzantine Generals Problem, why agreement needs at least 3f + 1 nodes to survive f traitors, how signatures and PBFT change things, and how blockchains reach consensus.
+---
+<h2 id="problem">When machines lie</h2>
+<p>A crashed computer is easy to reason about: it stops. A <strong>Byzantine fault</strong> is worse. A faulty component keeps running and says the wrong thing, perhaps different wrong things to different listeners. The cause can be a bug, bad hardware or an attacker. The others cannot simply tell whether it has failed, because it may look healthy to one observer and broken to another.</p>
+<p>The name comes from a 1982 paper by Leslie Lamport, Robert Shostak and Marshall Pease, <a href="https://lamport.azurewebsites.net/pubs/byz.pdf" rel="noopener">The Byzantine Generals Problem</a>. It casts the problem as an allegory: divisions of an army surround a city, each led by a general, and they must agree on one plan. Some generals are traitors who will send conflicting messages to stop the loyal ones from agreeing. Lamport has said he first considered "Albanian generals", and chose Byzantium so as not to offend anyone living.</p>
+<p>The loyal generals need two things:</p>
+<ul class="rules">
+  <li><strong>Agreement.</strong> All loyal generals decide on the same plan.</li>
+  <li><strong>Validity.</strong> If the commander is loyal, every loyal general follows the commander's order.</li>
+</ul>
+
+<h2 id="three">Why three is not enough</h2>
+<p>Take a commander and two lieutenants, one of them a traitor. Lieutenant 1 receives "attack" from the commander, and hears from lieutenant 2 that the commander said "retreat".</p>
+<p>Either the commander is a traitor who told the two different things, or lieutenant 2 is a traitor lying about what the commander said. From where lieutenant 1 stands, the two situations look exactly the same. No rule can be right in both, so with three generals, one traitor can always prevent agreement.</p>
+<p>The paper generalises this. With ordinary spoken messages, agreement is possible <strong>only if more than two-thirds of the generals are loyal</strong>, that is, with n generals and f traitors, n ≥ 3f + 1. An earlier paper by the same authors, <a href="https://lamport.azurewebsites.net/pubs/reaching.pdf" rel="noopener">Reaching Agreement in the Presence of Faults</a> (1980), proved the bound and won the <a href="https://www.podc.org/dijkstra/2005/" rel="noopener">2005 Dijkstra Prize</a>.</p>
+<form class="lab" id="generals" aria-labelledby="gen-h" onsubmit="return false">
+  <h3 id="gen-h">Try it: how many traitors can you survive?</h3>
+  <div class="lab-grid">
+    <label for="g-n">Generals (n): <output id="g-n-out" for="g-n">7</output></label>
+    <input id="g-n" type="range" min="3" max="16" value="7">
+    <label for="g-f">Traitors (f): <output id="g-f-out" for="g-f">2</output></label>
+    <input id="g-f" type="range" min="0" max="15" value="2">
+  </div>
+  <div class="gen-dots" id="g-dots" aria-hidden="true"></div>
+  <p class="lab-out" id="g-out" role="status">7 generals can survive up to 2 traitors. With 2, agreement is possible.</p>
+</form>
+
+<h2 id="signatures">Signatures change the maths</h2>
+<p>The 3f + 1 bound assumes a traitor can lie about what others said. If every message is <strong>signed</strong> so that it cannot be forged or altered, a traitor can no longer put words in a loyal general's mouth. The same paper gives an algorithm with signed messages that reaches agreement whatever the number of traitors.</p>
+<p>Real systems still usually use 3f + 1 replicas, because they also need to make progress when messages are slow, not only stay correct. Signatures make the protocols simpler and stronger, not free.</p>
+
+<h2 id="pbft">Making it practical</h2>
+<p>For two decades Byzantine agreement was considered too slow for real use. In 1999, Miguel Castro and Barbara Liskov published <a href="https://pdos.csail.mit.edu/6.824/papers/castro-practicalbft.pdf" rel="noopener">Practical Byzantine Fault Tolerance (PBFT)</a>. It runs state machine replication on 3f + 1 replicas, and orders each request in three rounds of messages: pre-prepare, prepare and commit.</p>
+<p>PBFT showed that a replicated file system could tolerate Byzantine faults and run only a little slower than an unreplicated one. Many protocols followed, tuning speed (Zyzzyva), robustness under attack (Aardvark, RBFT), or using trusted hardware to get by with 2f + 1 replicas (A2M, MinBFT).</p>
+<p class="tip">There is a limit, too. Fischer, Lynch and Paterson proved in 1985 that in a fully asynchronous network, no deterministic protocol can guarantee consensus if even one process may crash. Practical protocols get around this by assuming the network is eventually timely (PBFT stays safe always, and makes progress when it is), or by using randomness.</p>
+
+<h2 id="blockchains">Agreement on a public chain</h2>
+<p>A public blockchain has to solve the Byzantine generals problem among strangers, where anyone can join and pretend to be many people at once (a Sybil attack). Counting heads doesn't work, so chains count something that is costly to fake.</p>
+<dl class="parts">
+  <div><dt>Proof of work</dt><dd>Bitcoin weights votes by computing power. The chain with the most accumulated work wins, and a block becomes harder to reverse as more blocks are built on it. Finality is probabilistic. See the <a href="https://bitcoin.org/bitcoin.pdf" rel="noopener">Bitcoin paper</a>.</dd></div>
+  <div><dt>Proof of stake</dt><dd>Ethereum weights votes by ether locked up as stake. Validators vote on checkpoints, one at the start of each epoch. A checkpoint is <em>justified</em> once validators holding two-thirds of the stake vote for it, and <em>finalised</em> when the next checkpoint is justified on top of it, usually after about two epochs (around 13 minutes). It is the 3f + 1 threshold again, measured in stake rather than machines. Validators who break the rules lose part of their stake.</dd></div>
+</dl>
+<p>In both cases, the chain is <a href="state-machine-replication.html">state machine replication</a> run by mutually distrusting replicas. <a href="ethereum.html">The next block, Ethereum,</a> is one such chain.</p>

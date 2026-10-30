@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ethereum · Five Blocks</title>
+<meta name="description" content="Ethereum as a programmable replicated state machine: accounts, the Ethereum Virtual Machine, gas and fees, ERC-20 and ERC-721 tokens, and the move from proof of work to proof of stake.">
+<meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="9" width="9" height="14" class="b0"/><rect x="21" y="9" width="9" height="14" class="b2"/><rect x="11.5" y="9" width="9" height="14" class="b1"/><path d="M11 16h1M20 16h1" class="bl"/></svg><span>Five Blocks</span></a>
+    <nav aria-label="Blocks"><ul class="bnav"><li><a href="merkle-trees.html"><span class="h" aria-hidden="true">#0</span>Merkle trees</a></li><li><a href="state-machine-replication.html"><span class="h" aria-hidden="true">#1</span>Replication</a></li><li><a href="byzantine-faults.html"><span class="h" aria-hidden="true">#2</span>Byzantine faults</a></li><li><a href="ethereum.html" aria-current="page"><span class="h" aria-hidden="true">#3</span>Ethereum</a></li><li><a href="chainlink.html"><span class="h" aria-hidden="true">#4</span>Oracles</a></li><li><a href="about.html">About</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<header class="bhead">
+  <div class="wrap bhead-in">
+    <div class="bh-title">
+      <p class="height">Block <span class="mono">#3</span> of 5</p>
+      <h1>Ethereum</h1>
+      <p class="lede">A replicated state machine that anyone can program: accounts, the EVM, gas, tokens, and the move to proof of stake.</p>
+    </div>
+    <dl class="header-card" aria-label="Block header">
+      <div class="hc-id"><svg class="idn" viewBox="-.5 -.5 6 6" width="72" height="72" aria-hidden="true" focusable="false" style="--hue:146"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/></g></svg></div>
+      <div><dt>Hash</dt><dd class="mono hash" title="cc1864e2a840090c646a2a38b1493d2f42cd68aca7e013e01ebdeb848830df33">cc1864e2a8…30df33</dd></div>
+      <div><dt>Previous</dt><dd><a href="byzantine-faults.html" class="mono">7a58e2f399…065dd0</a></dd></div>
+      <div><dt>Payload</dt><dd class="mono">Ethereum.json · 3,585 bytes</dd></div>
+      <div><dt>First committed</dt><dd class="mono">2024-01-30</dd></div>
+    </dl>
+  </div>
+</header>
+<div class="wrap article">
+  <nav class="toc" aria-label="In this block"><p class="toc-h">In this block</p><ol><li><a href="#what">A state machine anyone can program</a></li><li><a href="#accounts">Accounts and addresses</a></li><li><a href="#evm">The Ethereum Virtual Machine</a></li><li><a href="#gas">Gas and fees</a></li><li><a href="#tokens">Tokens</a></li><li><a href="#merge">From proof of work to proof of stake</a></li><li><a href="#record">The original record</a></li></ol></nav>
+  <article class="prose">
+<h2 id="what">A state machine anyone can program</h2>
+<p>Bitcoin replicates one kind of state: who owns which coins. <strong>Ethereum</strong> replicates a general-purpose computer. Anyone can upload a program, a <em>smart contract</em>, and every node runs it in exactly the same way, so its results are as trustworthy as the chain itself.</p>
+<p>Vitalik Buterin described it in a <a href="https://ethereum.org/en/whitepaper/" rel="noopener">2013 white paper</a>. Gavin Wood wrote its formal specification, the Yellow Paper, and the network went live on 30 July 2015. Its native currency is <strong>ether</strong> (ETH, symbol Ξ).</p>
+
+<h2 id="accounts">Accounts and addresses</h2>
+<dl class="parts">
+  <div><dt>Externally owned accounts</dt><dd>Controlled by a private key held by a person or a program. Only these can start a transaction.</dd></div>
+  <div><dt>Contract accounts</dt><dd>Controlled by their code. They run when a transaction or another contract calls them, and can hold ether and data.</dd></div>
+  <div><dt>Addresses</dt><dd>20 bytes, written as 40 hexadecimal characters starting with <code>0x</code>.</dd></div>
+</dl>
+<p>The world state is the balance, code and storage of every account. Each block commits to it with a single root hash, using a Merkle Patricia trie: the idea from <a href="merkle-trees.html">block #0</a>.</p>
+
+<h2 id="evm">The Ethereum Virtual Machine</h2>
+<p>Contracts run on the <a href="https://ethereum.org/en/developers/docs/evm/" rel="noopener">Ethereum Virtual Machine (EVM)</a>, a simple stack machine that every node implements identically. The EVM is deterministic: no clocks, no randomness and no network calls. That is exactly what <a href="state-machine-replication.html">state machine replication</a> demands, and it is why contracts need <a href="chainlink.html">oracles</a> to learn about the outside world.</p>
+<p>The EVM can express any computation (it is Turing-complete), so a contract could loop forever. Gas stops that: every instruction has a price, and a transaction can only run as long as the gas it paid for. Most contracts are written in <strong>Solidity</strong> or <strong>Vyper</strong> and compiled to EVM bytecode. Early languages such as Serpent, LLL and Mutan are no longer used.</p>
+
+<h2 id="gas">Gas and fees</h2>
+<p>Since the London upgrade in August 2021 (<a href="https://eips.ethereum.org/EIPS/eip-1559" rel="noopener">EIP-1559</a>), a transaction's fee is:</p>
+<p class="formula mono">fee = gas used × (base fee + priority fee)</p>
+<ul class="rules">
+  <li><strong>Gas used</strong> depends on the work done. A plain ETH transfer always uses 21,000 gas.</li>
+  <li><strong>Base fee</strong> is set by the protocol and rises or falls with demand for block space. It is burned, not paid to anyone.</li>
+  <li><strong>Priority fee</strong> is a tip to the validator who includes the transaction.</li>
+</ul>
+<p>Fees are quoted in <strong>gwei</strong>. 1 ether = 10<sup>9</sup> gwei = 10<sup>18</sup> wei, wei being the smallest unit.</p>
+<form class="lab" id="gas-lab" aria-labelledby="gas-h" onsubmit="return false">
+  <h3 id="gas-h">Try it: work out a fee</h3>
+  <div class="lab-grid three">
+    <label>Gas used<input id="gas-used" type="number" inputmode="numeric" min="21000" step="1" value="21000"></label>
+    <label>Base fee (gwei)<input id="gas-base" type="number" inputmode="decimal" min="0" step="any" value="10"></label>
+    <label>Priority fee (gwei)<input id="gas-tip" type="number" inputmode="decimal" min="0" step="any" value="2"></label>
+  </div>
+  <p class="lab-out mono" id="gas-out" role="status">21,000 × (10 + 2) gwei = 252,000 gwei = 0.000252 ETH. Burned: 210,000 gwei; to the validator: 42,000 gwei.</p>
+  <p class="lab-note">The priority fee is capped so that base fee + priority fee never exceeds the maximum fee the sender set. This is the worked example from <a href="https://ethereum.org/en/developers/docs/gas/" rel="noopener">ethereum.org's gas page</a>. No prices are fetched: this site never tracks markets.</p>
+</form>
+
+<h2 id="tokens">Tokens</h2>
+<dl class="parts">
+  <div><dt>ERC-20</dt><dd>The standard interface for <em>fungible</em> tokens, where every unit is the same, like currency or points (<a href="https://eips.ethereum.org/EIPS/eip-20" rel="noopener">EIP-20</a>). A token contract exposes <code>totalSupply</code>, <code>balanceOf</code>, <code>transfer</code>, <code>approve</code>, <code>allowance</code> and <code>transferFrom</code>.</dd></div>
+  <div><dt>ERC-721</dt><dd>The standard for <em>non-fungible</em> tokens (NFTs), where each token has its own ID and owner, such as a ticket, a certificate or an artwork record (<a href="https://eips.ethereum.org/EIPS/eip-721" rel="noopener">EIP-721</a>).</dd></div>
+</dl>
+<p>Because tokens share an interface, any wallet or exchange contract can handle any token. Applications built from these pieces include decentralised exchanges, lending markets, stablecoins and DAOs, organisations whose rules are enforced by contracts.</p>
+
+<h2 id="merge">From proof of work to proof of stake</h2>
+<p>Until 2022, Ethereum agreed on blocks by proof of work, like Bitcoin. On 15 September 2022, in an upgrade called <a href="https://ethereum.org/en/roadmap/merge/" rel="noopener">The Merge</a>, it switched to <a href="https://ethereum.org/en/developers/docs/consensus-mechanisms/pos/" rel="noopener">proof of stake</a> without stopping the chain.</p>
+<ul class="rules">
+  <li>Validators lock up at least 32 ETH as stake, propose blocks and vote on them.</li>
+  <li>Validators vote on a checkpoint at the start of each epoch (32 slots of 12 seconds). Once validators with two-thirds of the stake vote for a checkpoint and the next one, it becomes <em>final</em>, along with every block before it, usually in about 13 minutes. Two-thirds is the Byzantine threshold from <a href="byzantine-faults.html">block #2</a>.</li>
+  <li>Validators who sign conflicting votes are <em>slashed</em>: they lose part of their stake and are removed.</li>
+  <li>Ethereum's electricity use fell by more than 99.98%, according to the Crypto Carbon Ratings Institute (CCRI) estimate <a href="https://ethereum.org/en/energy-consumption/" rel="noopener">cited on ethereum.org</a>.</li>
+</ul>
+<p>Many independent teams write Ethereum node software in different languages, including Go, Rust, C#, Java, Nim and TypeScript. That way a bug in one client cannot take down the whole network.</p>
+<section class="record" aria-labelledby="record">
+  <h2 id="record">The original record</h2>
+  <p>This page grew from the note below, kept byte for byte. They are this block's payload, so changing one character would change its hash and break every block after it.</p>
+  <details class="rec"><summary><span class="mono">Ethereum.json</span> <span class="muted">· 3,585 bytes</span></summary><div class="code" tabindex="0" aria-label="Ethereum.json, scrolls sideways"><pre>{
+  &quot;Ethereum&quot;: {
+    &quot;Description&quot;: &quot;Decentralized blockchain with smart contract functionality. Ether (ETH) is its native cryptocurrency, second only to bitcoin in market capitalization.&quot;,
+    &quot;Ether&quot;: {
+      &quot;Abbreviation&quot;: &quot;ETH&quot;,
+      &quot;Sign&quot;: &quot;Ξ&quot;
+    },
+    &quot;Software&quot;: {
+      &quot;OriginalAuthors&quot;: [&quot;Vitalik Buterin&quot;, &quot;Gavin Wood&quot;],
+      &quot;InitialRelease&quot;: &quot;30 July 2015&quot;,
+      &quot;StableRelease&quot;: {
+        &quot;Version&quot;: &quot;1.12.2&quot;,
+        &quot;ReleaseDate&quot;: &quot;13 August 2023&quot;
+      },
+      &quot;DevelopmentStatus&quot;: &quot;Active&quot;,
+      &quot;ProgrammingLanguages&quot;: [&quot;Go&quot;, &quot;Rust&quot;, &quot;C#&quot;, &quot;C++&quot;, &quot;Java&quot;, &quot;Python&quot;, &quot;Nim&quot;, &quot;TypeScript&quot;],
+      &quot;OperatingSystem&quot;: &quot;Cross-platform&quot;,
+      &quot;Platform&quot;: [&quot;x86-64&quot;, &quot;ARM&quot;],
+      &quot;AvailableIn&quot;: &quot;Multilingual, primarily English&quot;,
+      &quot;Type&quot;: &quot;Distributed computing&quot;,
+      &quot;License&quot;: &quot;Open-source licenses&quot;,
+      &quot;ActiveHosts&quot;: &quot;Approximately 8,600 nodes as of 6 June 2023&quot;,
+      &quot;Website&quot;: &quot;ethereum.org&quot;
+    },
+    &quot;History&quot;: {
+      &quot;ConceptionYear&quot;: 2013,
+      &quot;Founders&quot;: [&quot;Vitalik Buterin&quot;, &quot;Gavin Wood&quot;, &quot;Charles Hoskinson&quot;, &quot;Anthony Di Iorio&quot;, &quot;Joseph Lubin&quot;],
+      &quot;DevelopmentStart&quot;: 2014,
+      &quot;NetworkLive&quot;: &quot;30 July 2015&quot;,
+      &quot;KeyFeatures&quot;: [&quot;DeFi Applications&quot;, &quot;NFTs&quot;, &quot;Use of ERC-20 Token Standard&quot;, &quot;Initial Coin Offerings&quot;],
+      &quot;MajorUpgrade&quot;: {
+        &quot;Name&quot;: &quot;The Merge&quot;,
+        &quot;Date&quot;: &quot;15 September 2022&quot;,
+        &quot;Details&quot;: &quot;Transition from Proof-of-Work (PoW) to Proof-of-Stake (PoS)&quot;,
+        &quot;EnergyReduction&quot;: &quot;99%&quot;
+      }
+    },
+    &quot;Design&quot;: {
+      &quot;Ether&quot;: {
+        &quot;Description&quot;: &quot;Cryptocurrency generated as a reward to validators in proof-of-stake system.&quot;,
+        &quot;Unit&quot;: &quot;wei (1 ether = 10^18 wei)&quot;
+      },
+      &quot;Accounts&quot;: {
+        &quot;Types&quot;: [&quot;User Accounts&quot;, &quot;Contract Accounts&quot;],
+        &quot;Functions&quot;: &quot;Transfer ETH, execute contract code, create new contracts&quot;
+      },
+      &quot;Addresses&quot;: &quot;Hexadecimal, prefixed with 0x&quot;,
+      &quot;VirtualMachine&quot;: &quot;Ethereum Virtual Machine (EVM)&quot;,
+      &quot;Gas&quot;: &quot;Unit of account within EVM for transaction fee calculation&quot;
+    },
+    &quot;Applications&quot;: {
+      &quot;EVMInstructionSet&quot;: &quot;Turing-complete&quot;,
+      &quot;PopularUses&quot;: [&quot;ERC-20 Tokens&quot;, &quot;ERC-721 NFTs&quot;, &quot;DeFi&quot;, &quot;DAOs&quot;, &quot;Prediction Markets&quot;],
+      &quot;ContractLanguages&quot;: [&quot;Solidity&quot;, &quot;Serpent&quot;, &quot;Yul&quot;, &quot;LLL&quot;, &quot;Mutan&quot;, &quot;Vyper&quot;]
+    },
+    &quot;ERC-20Tokens&quot;: {
+      &quot;Description&quot;: &quot;Standard for fungible tokens on Ethereum blockchain&quot;,
+      &quot;APIFunctions&quot;: [&quot;Token transfer&quot;, &quot;Token balance retrieval&quot;, &quot;Total supply retrieval&quot;]
+    },
+    &quot;NFTs&quot;: {
+      &quot;ERC-721Standard&quot;: &quot;Standard for non-fungible tokens&quot;,
+      &quot;Uses&quot;: [&quot;Digital art&quot;, &quot;Collectibles&quot;, &quot;Virtual real estate&quot;]
+    },
+    &quot;DeFi&quot;: {
+      &quot;Description&quot;: &quot;Decentralized financial instruments&quot;,
+      &quot;Access&quot;: &quot;Web3-enabled browsers or applications&quot;,
+      &quot;Examples&quot;: [&quot;MakerDAO&quot;, &quot;Compound&quot;, &quot;Uniswap&quot;]
+    },
+    &quot;EnterpriseSoftware&quot;: {
+      &quot;Usage&quot;: &quot;Ethereum-based software for enterprise applications&quot;,
+      &quot;InterestedParties&quot;: [&quot;Microsoft&quot;, &quot;IBM&quot;, &quot;JPMorgan Chase&quot;, &quot;Deloitte&quot;]
+    },
+    &quot;Performance&quot;: {
+      &quot;TransactionsPerSecond&quot;: &quot;25 as of January 2016&quot;,
+      &quot;Comparison&quot;: &quot;Visa processes 45,000 payments per second&quot;
+    },
+    &quot;Regulation&quot;: {
+      &quot;US&quot;: &quot;Proposed Digital Commodities Consumer Protection Act to regulate cryptocurrencies&quot;
+    },
+    &quot;Notes&quot;: {
+      &quot;CryptocurrencyCode&quot;: &quot;Informal use of &#x27;ETH&#x27;, no formal ISO 4217 code&quot;
+    },
+    &quot;References&quot;: [
+      {
+        &quot;Source&quot;: &quot;Ethernodes&quot;,
+        &quot;Date&quot;: &quot;6 June 2023&quot;,
+        &quot;Detail&quot;: &quot;Active hosts data&quot;
+      },
+      // Additional references continue here
+    ]
+  }
+}
+</pre></div><p><a href="data/Ethereum.json" download>Download Ethereum.json</a></p></details>
+</section>
+  </article>
+</div>
+<div class="wrap"><nav class="pager" aria-label="Blocks"><a class="pg prev" href="byzantine-faults.html"><small>← Block #2</small>Byzantine faults and agreement</a><a class="pg next" href="chainlink.html"><small>Block #4 →</small>Chainlink and oracles</a></nav></div>
+</main>
+<footer class="foot"><div class="wrap">
+  <p>Five Blocks is an educational site. Nothing here is investment, legal or tax advice, and it does not track prices.</p>
+  <p><a href="about.html#sources">Sources</a> · <a href="https://github.com/SolutionsAsService/Web3" rel="noopener">Source on GitHub</a> · MIT licensed</p>
+  <p><a href="https://demo.ultimatebusinessmachines.com/portfolio">Part of the Ultimate Business Machines portfolio</a></p>
+</div></footer>
+<script src="js/blocks.js" defer></script>
+</body>
+</html>

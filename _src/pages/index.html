@@ -1,0 +1,19 @@
+title: Five Blocks · Web3 from first principles
+description: Web3 explained from first principles in five linked blocks: hashes and Merkle trees, state machine replication, Byzantine faults, Ethereum, and Chainlink oracles. Each page is a real block in a verifiable hash chain.
+---
+<section class="wrap path" aria-labelledby="path-h">
+  <h2 id="path-h">Why this order</h2>
+  <ol class="path-list">
+    <li><span class="mono">#0</span><strong>Integrity</strong><span>A hash proves data hasn't changed. A Merkle tree does it for a whole data set at once.</span></li>
+    <li><span class="mono">#1</span><strong>Replication</strong><span>Copies of a deterministic program stay in step if they agree on the order of inputs.</span></li>
+    <li><span class="mono">#2</span><strong>Distrust</strong><span>Agreeing on that order when some copies lie takes more than three honest nodes for every traitor.</span></li>
+    <li><span class="mono">#3</span><strong>The platform</strong><span>Put all three together, open it to anyone, and you have Ethereum.</span></li>
+    <li><span class="mono">#4</span><strong>The outside world</strong><span>A deterministic chain can't see out, so oracle networks bring data in using the same tricks.</span></li>
+  </ol>
+</section>
+<section class="wrap how" aria-labelledby="how-h">
+  <div class="how-in">
+    <h2 id="how-h">How this site is a chain</h2>
+    <p>Each block's hash is <code>SHA-256(previous hash ‖ source files)</code>. The source files are the original research notes this site was written from, kept byte for byte. Change one comma in block #0's notes and all five hashes change. Each block's little pixel badge is an identicon drawn from its own hash, so a changed block also looks different. <a href="about.html#chain">The About page</a> shows how to check it yourself from the command line.</p>
+  </div>
+</section>

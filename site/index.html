@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Five Blocks · Web3 from first principles</title>
+<meta name="description" content="Web3 explained from first principles in five linked blocks: hashes and Merkle trees, state machine replication, Byzantine faults, Ethereum, and Chainlink oracles. Each page is a real block in a verifiable hash chain.">
+<meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="9" width="9" height="14" class="b0"/><rect x="21" y="9" width="9" height="14" class="b2"/><rect x="11.5" y="9" width="9" height="14" class="b1"/><path d="M11 16h1M20 16h1" class="bl"/></svg><span>Five Blocks</span></a>
+    <nav aria-label="Blocks"><ul class="bnav"><li><a href="merkle-trees.html"><span class="h" aria-hidden="true">#0</span>Merkle trees</a></li><li><a href="state-machine-replication.html"><span class="h" aria-hidden="true">#1</span>Replication</a></li><li><a href="byzantine-faults.html"><span class="h" aria-hidden="true">#2</span>Byzantine faults</a></li><li><a href="ethereum.html"><span class="h" aria-hidden="true">#3</span>Ethereum</a></li><li><a href="chainlink.html"><span class="h" aria-hidden="true">#4</span>Oracles</a></li><li><a href="about.html">About</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<header class="hero wrap">
+  <p class="kicker mono">Web3 from first principles</p>
+  <h1>Five blocks, <span class="nowrap">hash to oracle.</span></h1>
+  <p class="lede">Web3 is built from a few old ideas in computer science. This site walks through them in order, one block at a time: fingerprints, replicas, traitors, a world computer, and the oracles that let it see out.</p>
+</header>
+<section class="chainwrap" aria-labelledby="chain-h">
+  <div class="wrap">
+    <div class="chain-head"><h2 id="chain-h">The chain</h2>
+      <button type="button" class="btn" id="verify">Verify the chain in your browser</button></div>
+    <ol class="chain"><li class="blk" data-i="0">
+  <a href="merkle-trees.html">
+    <span class="blk-top"><span class="height mono">#0</span><svg class="idn" viewBox="-.5 -.5 6 6" width="44" height="44" aria-hidden="true" focusable="false" style="--hue:337"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/></g></svg><span class="state" data-state="0" aria-hidden="true"></span></span>
+    <span class="blk-title">Hashes and Merkle trees</span>
+    <span class="blk-sum">How one short fingerprint can vouch for gigabytes of data, and prove any piece of it with a handful of hashes.</span>
+    <span class="blk-meta"><span class="k">hash</span> <span class="mono">6e9ca20493…e1d669</span></span>
+    <span class="blk-meta"><span class="k">prev</span> <span class="mono">0000000000…000000</span></span>
+  </a>
+</li><li class="blk" data-i="1">
+  <a href="state-machine-replication.html">
+    <span class="blk-top"><span class="height mono">#1</span><svg class="idn" viewBox="-.5 -.5 6 6" width="44" height="44" aria-hidden="true" focusable="false" style="--hue:355"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/></g></svg><span class="state" data-state="1" aria-hidden="true"></span></span>
+    <span class="blk-title">State machine replication</span>
+    <span class="blk-sum">Run the same deterministic program on several servers, feed them the same inputs in the same order, and they stay in step.</span>
+    <span class="blk-meta"><span class="k">hash</span> <span class="mono">6efda5dbd8…0aee23</span></span>
+    <span class="blk-meta"><span class="k">prev</span> <span class="mono">6e9ca20493…e1d669</span></span>
+  </a>
+</li><li class="blk" data-i="2">
+  <a href="byzantine-faults.html">
+    <span class="blk-top"><span class="height mono">#2</span><svg class="idn" viewBox="-.5 -.5 6 6" width="44" height="44" aria-hidden="true" focusable="false" style="--hue:310"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="0" y="3" width="1" height="1"/><rect x="4" y="3" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/></g></svg><span class="state" data-state="2" aria-hidden="true"></span></span>
+    <span class="blk-title">Byzantine faults and agreement</span>
+    <span class="blk-sum">What happens when some machines don&#x27;t just crash, but lie, and why you need more than three honest nodes for every traitor.</span>
+    <span class="blk-meta"><span class="k">hash</span> <span class="mono">7a58e2f399…065dd0</span></span>
+    <span class="blk-meta"><span class="k">prev</span> <span class="mono">6efda5dbd8…0aee23</span></span>
+  </a>
+</li><li class="blk" data-i="3">
+  <a href="ethereum.html">
+    <span class="blk-top"><span class="height mono">#3</span><svg class="idn" viewBox="-.5 -.5 6 6" width="44" height="44" aria-hidden="true" focusable="false" style="--hue:146"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="0" y="0" width="1" height="1"/><rect x="4" y="0" width="1" height="1"/><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/></g></svg><span class="state" data-state="3" aria-hidden="true"></span></span>
+    <span class="blk-title">Ethereum</span>
+    <span class="blk-sum">A replicated state machine that anyone can program: accounts, the EVM, gas, tokens, and the move to proof of stake.</span>
+    <span class="blk-meta"><span class="k">hash</span> <span class="mono">cc1864e2a8…30df33</span></span>
+    <span class="blk-meta"><span class="k">prev</span> <span class="mono">7a58e2f399…065dd0</span></span>
+  </a>
+</li><li class="blk" data-i="4">
+  <a href="chainlink.html">
+    <span class="blk-top"><span class="height mono">#4</span><svg class="idn" viewBox="-.5 -.5 6 6" width="44" height="44" aria-hidden="true" focusable="false" style="--hue:30"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="0" y="1" width="1" height="1"/><rect x="4" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="1" y="2" width="1" height="1"/><rect x="3" y="2" width="1" height="1"/><rect x="1" y="3" width="1" height="1"/><rect x="3" y="3" width="1" height="1"/><rect x="2" y="4" width="1" height="1"/></g></svg><span class="state" data-state="4" aria-hidden="true"></span></span>
+    <span class="blk-title">Chainlink and oracles</span>
+    <span class="blk-sum">A blockchain can&#x27;t see the outside world. Oracle networks bring data in, using the same fault-tolerance ideas as the chain itself.</span>
+    <span class="blk-meta"><span class="k">hash</span> <span class="mono">15238c3606…ddc754</span></span>
+    <span class="blk-meta"><span class="k">prev</span> <span class="mono">cc1864e2a8…30df33</span></span>
+  </a>
+</li></ol>
+    <div class="verify-out" id="verify-out" role="status"><p>Each block's hash is SHA-256 of the previous hash and its source files. Press verify to recompute all five here, using your browser's own crypto. The empty circles fill in as each block checks out.</p></div>
+  </div>
+</section>
+<script type="application/json" id="manifest">[{"slug": "merkle-trees", "files": ["MerkleTree.yaml"], "prev": "0000000000000000000000000000000000000000000000000000000000000000", "hash": "6e9ca204931a4b6e7ba96c72e583dbc2261529633b00a4772f46dcd4b1e1d669"}, {"slug": "state-machine-replication", "files": ["StateMachineReplication.json"], "prev": "6e9ca204931a4b6e7ba96c72e583dbc2261529633b00a4772f46dcd4b1e1d669", "hash": "6efda5dbd8e1b04b8e03d63d8f9bf0ef4f1986b9d6c2e7849b217810d40aee23"}, {"slug": "byzantine-faults", "files": ["ByzantineFault.json", "ByzantineFault.yaml"], "prev": "6efda5dbd8e1b04b8e03d63d8f9bf0ef4f1986b9d6c2e7849b217810d40aee23", "hash": "7a58e2f3998696cf0406f2609635dc896b3f9678cb539abb08a3bbc432065dd0"}, {"slug": "ethereum", "files": ["Ethereum.json"], "prev": "7a58e2f3998696cf0406f2609635dc896b3f9678cb539abb08a3bbc432065dd0", "hash": "cc1864e2a840090c646a2a38b1493d2f42cd68aca7e013e01ebdeb848830df33"}, {"slug": "chainlink", "files": ["Chainlink.json"], "prev": "cc1864e2a840090c646a2a38b1493d2f42cd68aca7e013e01ebdeb848830df33", "hash": "15238c3606d08555fbd6b2e8aeff68258d3db0da1f16381f33af3b93faddc754"}]</script>
+<section class="wrap path" aria-labelledby="path-h">
+  <h2 id="path-h">Why this order</h2>
+  <ol class="path-list">
+    <li><span class="mono">#0</span><strong>Integrity</strong><span>A hash proves data hasn't changed. A Merkle tree does it for a whole data set at once.</span></li>
+    <li><span class="mono">#1</span><strong>Replication</strong><span>Copies of a deterministic program stay in step if they agree on the order of inputs.</span></li>
+    <li><span class="mono">#2</span><strong>Distrust</strong><span>Agreeing on that order when some copies lie takes more than three honest nodes for every traitor.</span></li>
+    <li><span class="mono">#3</span><strong>The platform</strong><span>Put all three together, open it to anyone, and you have Ethereum.</span></li>
+    <li><span class="mono">#4</span><strong>The outside world</strong><span>A deterministic chain can't see out, so oracle networks bring data in using the same tricks.</span></li>
+  </ol>
+</section>
+<section class="wrap how" aria-labelledby="how-h">
+  <div class="how-in">
+    <h2 id="how-h">How this site is a chain</h2>
+    <p>Each block's hash is <code>SHA-256(previous hash ‖ source files)</code>. The source files are the original research notes this site was written from, kept byte for byte. Change one comma in block #0's notes and all five hashes change. Each block's little pixel badge is an identicon drawn from its own hash, so a changed block also looks different. <a href="about.html#chain">The About page</a> shows how to check it yourself from the command line.</p>
+  </div>
+</section>
+</main>
+<footer class="foot"><div class="wrap">
+  <p>Five Blocks is an educational site. Nothing here is investment, legal or tax advice, and it does not track prices.</p>
+  <p><a href="about.html#sources">Sources</a> · <a href="https://github.com/SolutionsAsService/Web3" rel="noopener">Source on GitHub</a> · MIT licensed</p>
+  <p><a href="https://demo.ultimatebusinessmachines.com/portfolio">Part of the Ultimate Business Machines portfolio</a></p>
+</div></footer>
+<script src="js/blocks.js" defer></script>
+</body>
+</html>

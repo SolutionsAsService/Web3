@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="9" width="9" height="14" class="b0"/><rect x="21" y="9" width="9" height="14" class="b2"/><rect x="11.5" y="9" width="9" height="14" class="b1"/><path d="M11 16h1M20 16h1" class="bl"/></svg><span>Five Blocks</span></a>
+    <nav aria-label="Blocks"><ul class="bnav">{{nav}}<li><a href="about.html"{{cur:about}}>About</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+{{body}}
+</main>
+<footer class="foot"><div class="wrap">
+  <p>Five Blocks is an educational site. Nothing here is investment, legal or tax advice, and it does not track prices.</p>
+  <p><a href="about.html#sources">Sources</a> · <a href="https://github.com/SolutionsAsService/Web3" rel="noopener">Source on GitHub</a> · MIT licensed</p>
+  <p><a href="https://demo.ultimatebusinessmachines.com/portfolio">Part of the Ultimate Business Machines portfolio</a></p>
+</div></footer>
+<script src="js/blocks.js" defer></script>
+</body>
+</html>

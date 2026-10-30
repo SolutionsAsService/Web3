@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hashes and Merkle trees · Five Blocks</title>
+<meta name="description" content="What a cryptographic hash is, how a Merkle tree lets one root hash vouch for a whole data set, how inclusion proofs work, and where Merkle trees are used, from Bitcoin to Git.">
+<meta name="theme-color" content="#f4f3ee" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0c0e12" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;family=JetBrains+Mono:wght@400;600&amp;display=swap">
+<link rel="stylesheet" href="css/blocks.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="mast">
+  <div class="wrap mast-in">
+    <a class="brand" href="index.html"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="2" y="9" width="9" height="14" class="b0"/><rect x="21" y="9" width="9" height="14" class="b2"/><rect x="11.5" y="9" width="9" height="14" class="b1"/><path d="M11 16h1M20 16h1" class="bl"/></svg><span>Five Blocks</span></a>
+    <nav aria-label="Blocks"><ul class="bnav"><li><a href="merkle-trees.html" aria-current="page"><span class="h" aria-hidden="true">#0</span>Merkle trees</a></li><li><a href="state-machine-replication.html"><span class="h" aria-hidden="true">#1</span>Replication</a></li><li><a href="byzantine-faults.html"><span class="h" aria-hidden="true">#2</span>Byzantine faults</a></li><li><a href="ethereum.html"><span class="h" aria-hidden="true">#3</span>Ethereum</a></li><li><a href="chainlink.html"><span class="h" aria-hidden="true">#4</span>Oracles</a></li><li><a href="about.html">About</a></li></ul></nav>
+  </div>
+</header>
+<main id="main">
+<header class="bhead">
+  <div class="wrap bhead-in">
+    <div class="bh-title">
+      <p class="height">Block <span class="mono">#0</span> of 5</p>
+      <h1>Hashes and Merkle trees</h1>
+      <p class="lede">How one short fingerprint can vouch for gigabytes of data, and prove any piece of it with a handful of hashes.</p>
+    </div>
+    <dl class="header-card" aria-label="Block header">
+      <div class="hc-id"><svg class="idn" viewBox="-.5 -.5 6 6" width="72" height="72" aria-hidden="true" focusable="false" style="--hue:337"><rect x="-.5" y="-.5" width="6" height="6" class="idn-bg"/><g class="idn-fg"><rect x="1" y="0" width="1" height="1"/><rect x="3" y="0" width="1" height="1"/><rect x="2" y="0" width="1" height="1"/><rect x="1" y="1" width="1" height="1"/><rect x="3" y="1" width="1" height="1"/><rect x="2" y="1" width="1" height="1"/><rect x="0" y="2" width="1" height="1"/><rect x="4" y="2" width="1" height="1"/><rect x="2" y="2" width="1" height="1"/><rect x="2" y="3" width="1" height="1"/><rect x="0" y="4" width="1" height="1"/><rect x="4" y="4" width="1" height="1"/><rect x="1" y="4" width="1" height="1"/><rect x="3" y="4" width="1" height="1"/></g></svg></div>
+      <div><dt>Hash</dt><dd class="mono hash" title="6e9ca204931a4b6e7ba96c72e583dbc2261529633b00a4772f46dcd4b1e1d669">6e9ca20493…e1d669</dd></div>
+      <div><dt>Previous</dt><dd><span class="mono">0000000000…000000</span> <span class="muted">(genesis)</span></dd></div>
+      <div><dt>Payload</dt><dd class="mono">MerkleTree.yaml · 2,621 bytes</dd></div>
+      <div><dt>First committed</dt><dd class="mono">2024-02-26</dd></div>
+    </dl>
+  </div>
+</header>
+<div class="wrap article">
+  <nav class="toc" aria-label="In this block"><p class="toc-h">In this block</p><ol><li><a href="#hashes">A fingerprint for data</a></li><li><a href="#tree">From one hash to a tree</a></li><li><a href="#proofs">Proving one piece</a></li><li><a href="#safety">Keeping leaves and branches apart</a></li><li><a href="#uses">Where Merkle trees are used</a></li><li><a href="#record">The original record</a></li></ol></nav>
+  <article class="prose">
+<h2 id="hashes">A fingerprint for data</h2>
+<p>A <strong>cryptographic hash function</strong> turns any input, a word or a whole film, into a short, fixed-size output called a hash or digest. SHA-256, used throughout this site, always gives 256 bits, written as 64 hexadecimal characters.</p>
+<p>A good hash function has these properties:</p>
+<ul class="rules">
+  <li><strong>Deterministic.</strong> The same input always gives the same hash.</li>
+  <li><strong>Avalanche.</strong> Change one character and about half the output bits flip. The new hash looks unrelated to the old one.</li>
+  <li><strong>One-way.</strong> Given a hash, you cannot work back to an input that produces it (preimage resistance).</li>
+  <li><strong>Collision-resistant.</strong> Nobody can find two different inputs with the same hash.</li>
+</ul>
+<form class="lab" id="hasher" aria-labelledby="hasher-h" onsubmit="return false">
+  <h3 id="hasher-h">Try it: SHA-256</h3>
+  <label for="h-in">Input</label>
+  <input id="h-in" type="text" value="hello, block" autocomplete="off" spellcheck="false">
+  <p class="lab-out"><span class="k">SHA-256</span> <output id="h-out" for="h-in" class="mono hash-out">computing…</output></p>
+  <p class="lab-note">Computed by your browser's built-in Web Crypto. Change a single letter and watch the whole hash change.</p>
+</form>
+
+<h2 id="tree">From one hash to a tree</h2>
+<p>To fingerprint a big data set, such as a block's transactions or the files in a download, you could hash it all at once. But then checking any one piece means downloading everything. Ralph Merkle's answer, from 1979, is to hash in a tree:</p>
+<ol class="steps">
+  <li>Split the data into blocks and hash each one. These hashes are the <strong>leaves</strong>.</li>
+  <li>Pair up neighbouring hashes, join each pair and hash it, to make the next level up.</li>
+  <li>Repeat until one hash is left: the <strong>Merkle root</strong>.</li>
+</ol>
+<p>The root commits to every leaf. Change one byte anywhere, and its leaf hash changes, then its parent, and so on, all the way to the root.</p>
+<div class="lab" id="merkle" aria-labelledby="merkle-h">
+  <h3 id="merkle-h">Try it: build a Merkle tree</h3>
+  <p class="lab-note">Edit any of the four records, or pick one to see its proof: the sibling hashes you need to check it against the root.</p>
+  <div class="mk-leaves">
+    <label>Record A<input data-leaf="0" value="Alice pays Bob 5" spellcheck="false"></label>
+    <label>Record B<input data-leaf="1" value="Bob pays Carol 2" spellcheck="false"></label>
+    <label>Record C<input data-leaf="2" value="Carol pays Dan 1" spellcheck="false"></label>
+    <label>Record D<input data-leaf="3" value="Dan pays Alice 3" spellcheck="false"></label>
+  </div>
+  <fieldset class="mk-pick"><legend>Prove record</legend>
+    <label><input type="radio" name="mk-proof" value="0" checked> A</label>
+    <label><input type="radio" name="mk-proof" value="1"> B</label>
+    <label><input type="radio" name="mk-proof" value="2"> C</label>
+    <label><input type="radio" name="mk-proof" value="3"> D</label>
+  </fieldset>
+  <div class="mk-tree" id="mk-tree" aria-live="polite">
+    <noscript><p>The tree is drawn by JavaScript. With it turned off, the steps above still describe exactly what it shows.</p></noscript>
+  </div>
+  <p class="lab-note">Leaves are hashed as SHA-256(0x00 ‖ record) and inner nodes as SHA-256(0x01 ‖ left ‖ right), the scheme from RFC 6962 explained below.</p>
+</div>
+
+<h2 id="proofs">Proving one piece</h2>
+<p>To prove that a record is in the tree, you don't need the other records, only the hashes along its path. Hash the record, combine it with its sibling, combine that with the next sibling up, and see whether you arrive at the root you already trust.</p>
+<p>The proof grows with the <em>logarithm</em> of the size. A tree with a million leaves needs only 20 sibling hashes, about 640 bytes. That is why a phone wallet can check that a transaction is in a Bitcoin block without downloading the block, a method the Bitcoin paper calls simplified payment verification.</p>
+
+<h2 id="safety">Keeping leaves and branches apart</h2>
+<p>A naive Merkle tree has a weakness. An attacker can present an inner node's two child hashes as if they were a leaf, and so prove a "record" that was never in the data, with the same root. This is called a <strong>second-preimage attack</strong>.</p>
+<p>The fix is to hash leaves and inner nodes differently. Certificate Transparency (<a href="https://datatracker.ietf.org/doc/html/rfc6962" rel="noopener">RFC 6962</a>) puts a <code>0x00</code> byte in front of every leaf and a <code>0x01</code> byte in front of every inner node, so a branch can never pass for a leaf. The tree above does the same.</p>
+
+<h2 id="uses">Where Merkle trees are used</h2>
+<dl class="parts">
+  <div><dt>Bitcoin</dt><dd>Each block header holds the Merkle root of the block's transactions.</dd></div>
+  <div><dt>Ethereum</dt><dd>Uses a variant, the Merkle Patricia trie, to commit to every account's state in each block header.</dd></div>
+  <div><dt>Git</dt><dd>Every commit, folder and file is named by its hash, forming a Merkle graph: the commit hash commits to the whole project history.</dd></div>
+  <div><dt>IPFS</dt><dd>Files are split into blocks and linked in a <a href="https://docs.ipfs.tech/concepts/merkle-dag/" rel="noopener">Merkle DAG</a>, so content is addressed by what it is, not where it lives.</dd></div>
+  <div><dt>Certificate Transparency</dt><dd>Public logs of every TLS certificate, provably append-only.</dd></div>
+  <div><dt>File systems and databases</dt><dd>ZFS and Btrfs checksum data in trees, and Cassandra and Dynamo-style databases compare Merkle trees to find replicas that disagree.</dd></div>
+</dl>
+<p>And this site: each page's hash covers its source files and the hash before it, which is a hash <em>chain</em>, the simplest relative of a Merkle tree.</p>
+<section class="record" aria-labelledby="record">
+  <h2 id="record">The original record</h2>
+  <p>This page grew from the note below, kept byte for byte. They are this block's payload, so changing one character would change its hash and break every block after it.</p>
+  <details class="rec"><summary><span class="mono">MerkleTree.yaml</span> <span class="muted">· 2,621 bytes</span></summary><div class="code" tabindex="0" aria-label="MerkleTree.yaml, scrolls sideways"><pre>MerkleTree:
+  Description: &quot;A cryptographic and computer science construct, a Merkle tree (or hash tree) is a structure in which each leaf node is labeled with the hash of a data block, and each non-leaf node is labeled with the cryptographic hash of its child nodes&#x27; labels. This structure enables efficient and secure verification of content in large data sets.&quot;
+  Structure:
+    LeafNodes: &quot;Nodes at the base of the tree, each containing a hash of data blocks.&quot;
+    NonLeafNodes: &quot;Nodes above the leaf level, each containing a hash derived from its children nodes.&quot;
+    RootNode: &quot;The single node at the top of the tree, containing a hash formed from its children, representing the entire data set&#x27;s integrity.&quot;
+    BinaryTree: &quot;Most implementations are binary, but can be adapted to more child nodes per parent.&quot;
+  HashFunction: 
+    Description: &quot;A cryptographic hash function (e.g., SHA-2) is typically used for hashing, ensuring security against tampering.&quot;
+    Alternative: &quot;For protection against unintentional damage, simpler checksums (e.g., CRC) may be used.&quot;
+  Uses:
+    DataVerification: &quot;Ensures data blocks received in peer-to-peer networks are intact and unaltered.&quot;
+    Cryptography: &quot;Foundational in hash-based cryptography for secure data handling.&quot;
+    SystemsAndProtocols:
+      - &quot;InterPlanetary File System (IPFS)&quot;
+      - &quot;File systems like Btrfs and ZFS&quot;
+      - &quot;Dat and Apache Wave protocols&quot;
+      - &quot;Distributed systems like Git, Mercurial, and Tahoe-LAFS&quot;
+      - &quot;Blockchain networks such as Bitcoin and Ethereum&quot;
+      - &quot;Certificate Transparency framework&quot;
+      - &quot;Package managers (Nix, GNU Guix)&quot;
+      - &quot;NoSQL systems (Apache Cassandra, Riak, Dynamo)&quot;
+  Efficiency:
+    Verification: &quot;Verifying a leaf node&#x27;s integrity requires a logarithmic number of hashes, significantly more efficient than linear methods.&quot;
+  Security:
+    SecondPreimageAttack:
+      Description: &quot;A vulnerability where an attacker can create a different document with the same root hash. Mitigated by prefixing hash data with specific bytes for leaf and internal nodes.&quot;
+    Fixes: &quot;Certificate Transparency suggests prepending a 0x00 byte for leaf hashes and a 0x01 byte for internal hashes. Limiting tree size and depth can also enhance security.&quot;
+  Implementation:
+    TigerTreeHash:
+      Description: &quot;A specific form of Merkle tree that uses the Tiger hash function, binary structure, and is prevalent in various file-sharing protocols.&quot;
+      Applications: &quot;Gnutella, Gnutella2, Direct Connect, and associated file-sharing applications like Phex, BearShare, LimeWire, Shareaza, DC++, and gtk-gnutella.&quot;
+</pre></div><p><a href="data/MerkleTree.yaml" download>Download MerkleTree.yaml</a></p></details>
+</section>
+  </article>
+</div>
+<div class="wrap"><nav class="pager" aria-label="Blocks"><a class="pg next" href="state-machine-replication.html"><small>Block #1 →</small>State machine replication</a></nav></div>
+</main>
+<footer class="foot"><div class="wrap">
+  <p>Five Blocks is an educational site. Nothing here is investment, legal or tax advice, and it does not track prices.</p>
+  <p><a href="about.html#sources">Sources</a> · <a href="https://github.com/SolutionsAsService/Web3" rel="noopener">Source on GitHub</a> · MIT licensed</p>
+  <p><a href="https://demo.ultimatebusinessmachines.com/portfolio">Part of the Ultimate Business Machines portfolio</a></p>
+</div></footer>
+<script src="js/blocks.js" defer></script>
+</body>
+</html>

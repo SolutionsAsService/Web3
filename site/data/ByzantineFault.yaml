@@ -1,0 +1,27 @@
+ByzantineFault:
+  description: "A Byzantine fault is a condition in computer systems, particularly in distributed computing, where components may fail with inconsistent information regarding their state."
+  origin:
+    name: "Byzantine Generals Problem"
+    context: "An allegory developed to describe a scenario where system actors must agree on a strategy to avoid catastrophic failure, despite some actors being unreliable."
+  challenges:
+    - "Inconsistencies: A component, like a server, may appear both failed and functioning to different observers."
+    - "Consensus: Difficult to achieve as it requires unanimous agreement on the state of a component among all others, despite having imperfect information."
+    - "Fault Detection: Failure-detection systems struggle to accurately identify whether a component has actually failed."
+  impact:
+    catastrophicFailureRisk: "High risk if no consensus is reached, leading to potential system-wide failures."
+  solutions:
+    ByzantineFaultTolerance:
+      description: "BFT is a property of a distributed computing system that enables it to withstand Byzantine faults."
+      methods:
+        - "Replication: Duplicating components to ensure at least one functions correctly despite others failing."
+        - "Consensus Protocols: Algorithms designed to achieve reliable consensus in the presence of faulty or malicious components, such as PBFT (Practical Byzantine Fault Tolerance)."
+        - "State Machine Replication: Ensures that all correct nodes in the distributed system agree on the order of operations to be applied to the state of the replicated machine."
+  relatedTerms:
+    - "Interactive Consistency"
+    - "Source Congruency"
+    - "Error Avalanche"
+    - "Byzantine Agreement Problem"
+    - "Byzantine Failure"
+  references:
+    - "[1] Lamport, Shostak, and Pease, who first defined and described the Byzantine Generals Problem and solutions to the Byzantine fault."
+    - "[2] Allegorical scenario explaining the need for consensus among generals who must decide unanimously on a battle strategy but cannot fully trust the communication or the other generals."
